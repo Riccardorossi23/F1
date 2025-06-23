@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula 1 - Classifiche</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="script/script.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo"><img src="foto/f1-new.png" alt="StemmaF1">
+                </div>
+                <button class="hamburger" id="menu-toggle-btn">
+                    <i class="fas fa-bars">&#9776;</i>
+                </button>
+                <ul class="menu" id="main-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="scuderia.html">Scuderia</a></li>
+                    <li><a href="piloti.html">Piloti</a></li>
+                    <li><a href="calendario.html">calendario</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="classifiche.html">Classifiche</a></li>
+                    <li><a href="login.html">biglietti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Application -->
+    <div id="mainApp" class="main-content">
+        <div class="controls">
+            <div class="filter-group">
+                <label for="filterTeam">Filtra per Team:</label>
+                <select id="filterTeam">
+                    <option value="">Tutti i team</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="filterNation">Filtra per Nazione:</label>
+                <select id="filterNation">
+                    <option value="">Tutte le nazioni</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="filterCircuit">Filtra per Circuito:</label>
+                <select id="filterCircuit">
+                    <option value="">Tutti i Circuiti</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <button class="btnReset" onclick="resetFilters()">🔄 Reset Filtri</button>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-items">
+                <span class="stat-number" id="totalDrivers">0</span>
+                <span>Piloti</span>
+            </div>
+            <div class="stat-items">
+                <span class="stat-number" id="totalTeams">0</span>
+                <span>Team</span>
+            </div>
+            <div class="stat-items">
+                <span class="stat-number" id="totalRaces">0</span>
+                <span>Gare</span>
+            </div>
+        </div>
+
+        <div class="tab-buttons">
+            <button class="tab-btn active" onclick="showTab('drivers')">Classifica Piloti</button>
+            <button class="tab-btn" onclick="showTab('constructors')">Classifica Costruttori</button>
+            <button class="tab-btn" onclick="showTab('races')">Classifica Gare</button>
+        </div>
+
+        <div id="driversTab" class="tab-content active">
+            <table id="driversTable">
+                <thead>
+                    <tr>
+                        <th>Pos</th>
+                        <th>Pilota</th>
+                        <th>Team</th>
+                        <th>Nazione</th>
+                        <th>Punti</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div id="constructorsTab" class="tab-content">
+            <table id="constructorsTable">
+                <thead>
+                    <tr>
+                        <th>Posizione</th>
+                        <th>Nome Team</th>
+                        <th>Nazionalità</th>
+                        <th>Punti Totali</th>
+                        <th>Vittorie</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div id="racesTab" class="tab-content">
+            <table id="racesTable">
+                <thead>
+                    <tr>
+                        <th>Round</th>
+                        <th>Nazione</th>
+                        <th>Gran Premio</th>
+                        <th>Data</th>
+                        <th>Vincitore</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

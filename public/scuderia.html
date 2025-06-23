@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scuderie Formula 1 - Stagione 2025</title>
+    <link href="style/style.css" rel="stylesheet">
+    <script src="script/script.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo"><img src="foto/f1-new.png" alt="StemmaF1">
+                </div>
+                <button class="hamburger" id="menu-toggle-btn">
+                    <i class="fas fa-bars">&#9776;</i>
+                </button>
+                <ul class="menu" id="main-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="scuderia.html">Scuderia</a></li>
+                    <li><a href="piloti.html">Piloti</a></li>
+                    <li><a href="calendario.html">calendario</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="classifiche.html">Classifiche</a></li>
+                    <li><a href="login.html">biglietti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="team-logos-container">
+        <button class="scroll-arrow scroll-left" id="scroll-left">
+            <img src="foto/freccia_sinistra.png" alt="frecciaSX">
+        </button>
+        
+        <div class="team-logos" id="team-logos-scrollable">
+            <a href="#redbull" class="team-logo">
+                <img src="foto/stemmi/stemma_red_bull_menu.jpg" alt="Red Bull Racing">
+                <span>Red Bull</span>
+            </a>
+            <a href="#ferrari" class="team-logo">
+                <img src="foto/stemmi/stemma_ferrari_menu.jpg" alt="Ferrari">
+                <span>Ferrari</span>
+            </a>
+            <a href="#mercedes" class="team-logo">
+                <img src="foto/stemmi/stemma_mercedes_menu.jpg" alt="Mercedes">
+                <span>Mercedes</span>
+            </a>
+            <a href="#mclaren" class="team-logo">
+                <img src="foto/stemmi/stemma_mclaren_menu.jpg" alt="McLaren">
+                <span>McLaren</span>
+            </a>
+            <a href="#aston-martin" class="team-logo">
+                <img src="foto/stemmi/stemma_aston_martin_menu.jpg" alt="Aston Martin">
+                <span>AstonMartin</span>
+            </a>
+            <a href="#alpine" class="team-logo">
+                <img src="foto/stemmi/stemma_alpine_menu.jpg" alt="Alpine">
+                <span>Alpine</span>
+            </a>
+            <a href="#williams" class="team-logo">
+                <img src="foto/stemmi/stemma_williams_menu.png" alt="Williams">
+                <span>Williams</span>
+            </a>
+            <a href="#rb" class="team-logo">
+                <img src="foto/stemmi/stemma_racing_bulls_menu.jpg" alt="RB">
+                <span>RB</span>
+            </a>
+            <a href="#haas" class="team-logo">
+                <img src="foto/stemmi/stemma_haas_menu.png" alt="Haas">
+                <span>Haas</span>
+            </a>
+            <a href="#kick-sauber" class="team-logo">
+                <img src="foto/stemmi/stemma_kick_sauber_menu.jpg" alt="Kick Sauber">
+                <span>Kick Sauber</span>
+            </a>
+        </div>
+        
+        <button class="scroll-arrow scroll-right" id="scroll-right">
+            <img src="foto/freccia_destra.png" alt="frecciaDX">
+        </button>
+    </div>
+    <section class="hero">
+        <div class="container">
+            <h1>Scuderie F1 2025</h1>
+            <p>Scopri le dieci prestigiose scuderie che competono nel Campionato Mondiale di Formula 1 2025, la loro
+                storia, i successi e le formazioni attuali.</p>
+        </div>
+    </section>
+
+    <main>
+        <div class="teams-container">
+            <!-- Ferrari -->
+            <div id="ferrari" class="team-section ferrari">
+                <div class="team-header">
+                    <img src="foto/stemmi/stemma_ferrari.jpeg" alt="Logo Ferrari" class="team-logo">
+                    <div class="team-title-container">
+                        <h2 class="team-name">Scuderia Ferrari</h2>
+                        <div class="team-base">
+                            <img src="foto/bandiere/bandiera_italia.png" alt="Bandiera Italia" class="team-flag">
+                            Maranello, Italia
+                        </div>
+                    </div>
+                </div>
+                <div class="team-content">
+                    <div class="team-image-container">
+                        <div class="slideshow-container">
+                            <div class="slideshow-slides">
+                                <div class="slide active">
+                                    <img src="foto/auto/fronte_ferrari.jpeg" alt="Monoposto Ferrari F1 - Vista frontale"
+                                        class="team-image">
+                                </div>
+                                <div class="slide">
+                                    <img src="foto/auto/laterale_ferrari.jpeg"
+                                        alt="Monoposto Ferrari F1 - Vista sinistra" class="team-image">
+                                </div>
+                                <div class="slide">
+                                    <img src="foto/auto/posteriore_ferrari.jpeg"
+                                        alt="Monoposto Ferrari F1 - Vista posteriore" class="team-image">
+                                </div>
+                            </div>
+                            <button class="slide-nav prev-slide">&lt;</button>
+                            <button class="slide-nav next-slide">&gt;</button>
+                            <div class="slide-indicators">
+                                <span class="indicator active"></span>
+                                <span class="indicator"></span>
+                                <span class="indicator"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <div class="team-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Team Principal</div>
+                                <div class="stat-value">Frédéric Vasseur</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Campionati</div>
+                                <div class="stat-value">16 (Ultimo: 2008)</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Prima Partecipazione</div>
+                                <div class="stat-value">1950</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Power Unit</div>
+                                <div class="stat-value">Ferrari</div>
+                            </div>
+                        </div>
+                        <div class="team-description">
+                            <p>La scuderia più antica e vincente nella storia della Formula 1, la Scuderia Ferrari è
+                                l'unico team ad aver partecipato a tutte le stagioni dal campionato inaugurale del 1950.
+                                Il team italiano è diventato sinonimo della Formula 1 stessa.</p>
+                            <p>Il periodo di maggior successo della Ferrari è arrivato all'inizio degli anni 2000,
+                                quando Michael Schumacher ha vinto cinque campionati piloti consecutivi dal 2000 al
+                                2004. Sotto la guida di Frédéric Vasseur, il team ha intrapreso una significativa
+                                ristrutturazione con l'obiettivo di tornare ai vertici del campionato.</p>
+                        </div>
+                        <div class="team-highlight">
+                            Ferrari rappresenta il cuore e l'anima della Formula 1, con un'eredità impareggiabile e una
+                            base di tifosi appassionati in tutto il mondo, conosciuti come "tifosi", che seguono la
+                            Scuderia con fervore religioso.
+                        </div>
+                        <div class="drivers-section">
+                            <h3 class="drivers-title">Line-up Piloti 2025</h3>
+                            <div class="drivers-container">
+                                <div class="driver-card">
+                                    <h4 class="driver-name"><span class="driver-number">16</span> Charles Leclerc</h4>
+                                    <div class="driver-nationality">
+                                        <img src="foto/bandiere/bandiera_monaco.jpg" alt="Bandiera Monaco"
+                                            class="driver-flag">
+                                        Monaco
+                                    </div>
+                                </div>
+                                <div class="driver-card">
+                                    <h4 class="driver-name"><span class="driver-number">44</span> Lewis Hamilton</h4>
+                                    <div class="driver-nationality">
+                                        <img src="foto/bandiere/bandiera_uk.jpg" alt="Bandiera Regno Unito"
+                                            class="driver-flag">
+                                        Gran Bretagna
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mercedes -->
+            <div id="mercedes" class="team-section mercedes">
+                <div class="team-header">
+                    <img src="foto/stemmi/stemma_mercedes.jpeg" alt="Logo Mercedes" class="team-logo">
+                    <div class="team-title-container">
+                        <h2 class="team-name">Mercedes-AMG Petronas</h2>
+                        <div class="team-base">
+                            <img src="foto/bandiere/bandiera_uk.jpg" alt="Bandiera Regno Unito" class="team-flag">
+                            Brackley,
+                            Regno Unito
+                        </div>
+                    </div>
+                </div>
+                <div class="team-content">
+                    <div class="team-image-container">
+                        <div class="slideshow-container">
+                            <div class="slideshow-slides">
+                                <div class="slide active">
+                                    <img src="foto/auto/fronte_mercedes.jpg"
+                                        alt="Monoposto Mercedes F1 - Vista frontale" class="team-image">
+                                </div>
+                                <div class="slide">
+                                    <img src="foto/auto/laterale_mercedes.jpeg"
+                                        alt="Monoposto Mercedes F1 - Vista laterale" class="team-image">
+                                </div>
+                                <div class="slide">
+                                    <img src="foto/auto/posteriore_mercedes.jpg"
+                                        alt="Monoposto Mercedes F1 - Vista posteriore" class="team-image">
+                                </div>
+                            </div>
+                            <button class="slide-nav prev-slide">&lt;</button>
+                            <button class="slide-nav next-slide">&gt;</button>
+                            <div class="slide-indicators">
+                                <span class="indicator active"></span>
+                                <span class="indicator"></span>
+                                <span class="indicator"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <div class="team-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Team Principal</div>
+                                <div class="stat-value">Toto Wolff</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Campionati</div>
+                                <div class="stat-value">8 (2014-2021)</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Prima Partecipazione</div>
+                                <div class="stat-value">1954</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Power Unit</div>
+                                <div class="stat-value">Mercedes</div>
+                            </div>
+                        </div>
+                        <div class="team-description">
+                            <p>Originariamente entrata in Formula 1 negli anni '50, la Mercedes-Benz è tornata nel
+                                circus come costruttore nel 2010 dopo aver acquisito la Brawn GP. L'era moderna della
+                                squadra è stata definita da un successo senza precedenti, in particolare durante l'era
+                                turbo-ibrida iniziata nel 2014.</p>
+                            <p>Sotto la guida di Toto Wolff, la Mercedes ha dominato la Formula 1 dal 2014 al 2021,
+                                conquistando otto campionati costruttori consecutivi e sette campionati piloti. La loro
+                                partnership con Lewis Hamilton si è rivelata una delle più vincenti nella storia della
+                                F1.</p>
+                        </div>
+                        <div class="team-highlight">
+                            Mercedes ha ridefinito l'eccellenza in Formula 1 con lo sviluppo rivoluzionario della power
+                            unit e l'innovazione aerodinamica, stabilendo nuovi standard per le prestazioni tecniche.
+                        </div>
+                        <div class="drivers-section">
+                            <h3 class="drivers-title">Line-up Piloti 2025</h3>
+                            <div class="drivers-container">
+                                <div class="driver-card">
+                                    <h4 class="driver-name"><span class="driver-number">63</span> George Russell</h4>
+                                    <div class="driver-nationality">
+                                        <img src="foto/bandiere/bandiera_uk.jpg" alt="Bandiera Regno Unito"
+                                            class="driver-flag"> Gran Bretagna
+                                    </div>
+                                </div>
+                                <div class="driver-card">
+                                    <h4 class="driver-name"><span class="driver-number">12</span> Kimi Antonelli</h4>
+                                    <div class="driver-nationality">
+                                        <img src="foto/bandiere/bandiera_italia.png" alt="Bandiera italia"
+                                            class="driver-flag"> Italia
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Red Bull -->
+            <div class="team-section red-bull">
+                <div class="team-header">
+                    <img src="foto/stemmi/stemma_red_bull.jpeg" alt="Logo Red Bull" class="team-logo">
+                    <div class="team-title-container">
+                        <h2 class="team-name">Oracle Red Bull Racing</h2>
+                        <div class="team-base">
+                            <img src="foto/bandiere/bandiera_uk.jpg" alt="Bandiera Regno Unito" class="team-flag">
+                            Milton Keynes,
+                            Regno Unito
+                        </div>
+                    </div>
+                </div>
+                <div class="team-content">
+                    <div class="team-image-container">
+                        <div class="slideshow-container">
+                            <div class="slideshow-slides">
+                                <div class="slide active">
+                                    <img src="foto/auto/fronte_red_bull.jpg"
+                                        alt="Monoposto Red Bull F1 - Vista frontale" class="team-image">
+                                </div>
+                                <div class="slide">
+                                    <img src="foto/auto/laterale_redbull.jpg"
+                                        alt="Monoposto Red Bull F1 - Vista laterale" class="team-image">
+                                </div>
+                                <div class="slide">
+                                    <img src="foto/auto/alto_red_bull.jpg"
+                                        alt="Monoposto Red Bull F1 - Vista posteriore" class="team-image">
+                                </div>
+                            </div>
+                            <button class="slide-nav prev-slide">&lt;</button>
+                            <button class="slide-nav next-slide">&gt;</button>
+                            <div class="slide-indicators">
+                                <span class="indicator active"></span>
+                                <span class="indicator"></span>
+                                <span class="indicator"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <div class="team-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Team Principal</div>
+                                <div class="stat-value">Christian Horner</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Campionati</div>
+                                <div class="stat-value">6 (2010-2013, 2022-2023)</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Prima Partecipazione</div>
+                                <div class="stat-value">2005</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Power Unit</div>
+                                <div class="stat-value">Red Bull Powertrains</div>
+                            </div>
+                        </div>
+                        <div class="team-highlight">
+                            Red Bull Racing si è affermata come la forza dominante della Formula 1 moderna, combinando
+                            l'eccellenza aerodinamica di Adrian Newey con una leadership strategica e un pilota di
+                            talento
+                            generazionale in Max Verstappen.
+                        </div>
+                        <div class="drivers-section">
+                            <h3 class="drivers-title">Line-up Piloti 2025</h3>
+                            <div class="drivers-container">
+                                <div class="driver-card">
+                                    <h4 class="driver-name"><span class="driver-number">1</span> Max Verstappen</h4>
+                                    <div class="driver-nationality">
+                                        <img src="foto/bandiere/bandiera_olanda.jpg" alt="Bandiera Paesi Bassi"
+                                            class="driver-flag">
+                                        Paesi Bassi
+                                    </div>
+                                </div>
+                                <div class="driver-card">
+                                    <h4 class="driver-name"><span class="driver-number">22</span> Yuki Tsunoda</h4>
+                                    <div class="driver-nationality">
+                                        <img src="foto/bandiere/bandiera_giappone.png" alt="Bandiera Giappone"
+                                            class="driver-flag">
+                                        Giappone
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- McLaren -->
+            <div class="team-section mclaren">
+                <div class="team-header">
+                    <img src="foto/stemmi/stemma_mclaren.jpeg" alt="Logo McLaren" class="team-logo">
+                    <div class="team-title-container">
+                        <h2 class="team-name">McLaren Formula 1 Team</h2>
+                        <div class="team-base">
+                            <img src="foto/bandiere/bandiera_uk.jpg" alt="Bandiera Regno Unito" class="team-flag">
+                            Woking,
+                            Regno
+                            Unito
+                        </div>
+                    </div>
+                </div>
+                <div class="team-content">
+                    <div class="team-image-container">
+                        <div class="slideshow-container">
+                            <div class="slideshow-slides">
+                                <div class="slide active">
+                                    <img src="foto/auto/fronte_mclaren.jpg" alt="Monoposto McLaren F1 - Vista frontale"
+                                        class="team-image">
+                                </div>
+                                <div class="slide">
+                                    <img src="foto/auto/laterale_mclaren.jpg"
+                                        alt="Monoposto McLaren F1 - Vista laterale" class="team-image">
+                                </div>
+                                <div class="slide">
+                                    <img src="foto/auto/alto_mc_laren.jpg" alt="Monoposto McLaren F1 - Vista posteriore"
+                                        class="team-image">
+                                </div>
+                            </div>
+                            <button class="slide-nav prev-slide">&lt;</button>
+                            <button class="slide-nav next-slide">&gt;</button>
+                            <div class="slide-indicators">
+                                <span class="indicator active"></span>
+                                <span class="indicator"></span>
+                                <span class="indicator"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <div class="team-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Team Principal</div>
+                                <div class="stat-value">Andrea Stella</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Campionati</div>
+                                <div class="stat-value">8 (Ultimo: 1998)</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Prima Partecipazione</div>
+                                <div class="stat-value">1966</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Power Unit</div>
+                                <div class="stat-value">Mercedes</div>
+                            </div>
+                        </div>
+                        <div class="team-description">
+                            <p>McLaren è una delle squadre più storiche della Formula 1, fondata dal pilota
+                                neozelandese
+                                Bruce McLaren nel 1963. Con otto titoli costruttori e 12 titoli piloti, è il secondo
+                                team
+                                più vincente nella storia della F1.</p>
+                            <p>Dopo un periodo difficile durante la partnership con Honda, McLaren ha avviato una
+                                significativa rinascita sotto la guida di Zak Brown e Andrea Stella. Il ritorno alle
+                                power
+                                unit Mercedes e una rinnovata attenzione allo sviluppo tecnico hanno permesso al
+                                team di
+                                tornare regolarmente sul podio e a lottare per le vittorie.</p>
+                        </div>
+                        <div class="team-highlight">
+                            McLaren continua a rappresentare l'innovazione e lo spirito pionieristico nel
+                            motorsport,
+                            mantenendo viva la visione del suo fondatore Bruce McLaren con un perfetto equilibrio
+                            tra
+                            tradizione e tecnologia all'avanguardia.
+                        </div>
+                        <div class="drivers-section">
+                            <h3 class="drivers-title">Line-up Piloti 2025</h3>
+                            <div class="drivers-container">
+                                <div class="driver-card">
+                                    <h4 class="driver-name"><span class="driver-number">4</span> Lando Norris</h4>
+                                    <div class="driver-nationality">
+                                        <img src="foto/bandiere/bandiera_uk.jpg" alt="Bandiera Regno Unito"
+                                            class="driver-flag">
+                                        Gran
+                                        Bretagna
+                                    </div>
+                                </div>
+                                <div class="driver-card">
+                                    <h4 class="driver-name"><span class="driver-number">81</span> Oscar Piastri</h4>
+                                    <div class="driver-nationality">
+                                        <img src="foto/bandiere/bandiera_australiana.jpg" alt="Bandiera Australia"
+                                            class="driver-flag"> Australia
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Aston Martin -->
+            <div class="team-section aston-martin">
+                <div class="team-header">
+                    <img src="foto/stemmi/stemma_aston_martin.jpeg" alt="Logo Aston Martin" class="team-logo">
+                    <div class="team-title-container">
+                        <h2 class="team-name">Aston Martin Aramco</h2>
+                        <div class="team-base">
+                            <img src="foto/bandiere/bandiera_uk.jpg" alt="Bandiera Regno Unito" class="team-flag">
+                            Silverstone, Regno
+                            Unito
+                        </div>
+                    </div>
+                </div>
+                <div class="team-content">
+                    <div class="team-image-container">
+                        <div class="slideshow-container">
+                            <div class="slideshow-slides">
+                                <div class="slide active">
+                                    <img src="foto/auto/fronte_aston_martin.jpg"
+                                        alt="Monoposto Aston Martin F1 - Vista frontale" class="team-image">
+                                </div>
+                                <div class="slide">
+                                    <img src="foto/auto/laterale_aston_martin.jpg"
+                                        alt="Monoposto Aston Martin F1 - Vista laterale" class="team-image">
+                                </div>
+                                <div class="slide">
+                                    <img src="foto/auto/alto_aston_martin.jpeg"
+                                        alt="Monoposto Aston Martin F1 - Vista posteriore" class="team-image">
+                                </div>
+                            </div>
+                            <button class="slide-nav prev-slide">&lt;</button>
+                            <button class="slide-nav next-slide">&gt;</button>
+                            <div class="slide-indicators">
+                                <span class="indicator active"></span>
+                                <span class="indicator"></span>
+                                <span class="indicator"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <div class="team-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Team Principal</div>
+                                <div class="stat-value">Mike Krack</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Campionati</div>
+                                <div class="stat-value">0</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Prima Partecipazione</div>
+                                <div class="stat-value">2021</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Power Unit</div>
+                                <div class="stat-value">Mercedes</div>
+                            </div>
+                        </div>
+                        <div class="team-description">
+                            <p>Aston Martin è tornata in Formula 1 nel 2021 dopo aver rilevato il team Racing
+                                Point. Con il
+                                supporto finanziario del miliardario Lawrence Stroll, la squadra ha investito
+                                massicciamente
+                                in nuove strutture e personale di talento.</p>
+                            <p>La squadra ha radici che risalgono a Jordan Grand Prix, poi diventata Force India
+                                e Racing
+                                Point. L'ambizioso progetto Aston Martin mira a trasformare il team in un
+                                contendente per il
+                                campionato nei prossimi anni, con un nuovo campus tecnologico all'avanguardia a
+                                Silverstone.
+                            </p>
+                        </div>
+                        <div class="team-highlight">
+                            Aston Martin rappresenta il perfetto connubio tra l'eredità britannica del lusso
+                            automobilistico
+                            e le ambizioni moderne di eccellenza in Formula 1, con un approccio che mira al
+                            vertice
+                            attraverso investimenti strategici a lungo termine.
+                        </div>
+                        <div class="drivers-section">
+                            <h3 class="drivers-title">Line-up Piloti 2025</h3>
+                            <div class="drivers-container">
+                                <div class="driver-card">
+                                    <h4 class="driver-name"><span class="driver-number">14</span> Fernando
+                                        Alonso</h4>
+                                    <div class="driver-nationality">
+                                        <img src="foto/bandiere/bandiera_spagna.jpg" alt="Bandiera Spagna"
+                                            class="driver-flag">
+                                        Spagna
+                                    </div>
+                                </div>
+                                <div class="driver-card">
+                                    <h4 class="driver-name"><span class="driver-number">18</span> Lance Stroll
+                                    </h4>
+                                    <div class="driver-nationality">
+                                        <img src="foto/bandiere/bandiera_canada.jpg" alt="Bandiera Canada"
+                                            class="driver-flag">
+                                        Canada
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Alpine -->
+            <div class="team-section alpine">
+                <div class="team-header">
+                    <img src="foto/stemmi/stemma_alpine.jpeg" alt="Logo Alpine" class="team-logo">
+                    <div class="team-title-container">
+                        <h2 class="team-name">BWT Alpine F1 Team</h2>
+                        <div class="team-base">
+                            <img src="foto/bandiere/bandiera_francia.jpg" alt="Bandiera Francia" class="team-flag">
+                            Enstone, Regno
+                            Unito / Viry-Châtillon, Francia
+                        </div>
+                    </div>
+                </div>
+                <div class="team-content">
+                    <div class="team-image-container">
+                        <div class="slideshow-container">
+                            <div class="slideshow-slides">
+                                <div class="slide active">
+                                    <img src="foto/auto/fronte_alpine.jpg" alt="Monoposto Alpine F1 - Vista frontale"
+                                        class="team-image">
+                                </div>
+                                <div class="slide">
+                                    <img src="foto/auto/laterale_alpine.jpg" alt="Monoposto Alpine F1 - Vista laterale"
+                                        class="team-image">
+                                </div>
+                                <div class="slide">
+                                    <img src="foto/auto/posteriore_alpine.jpg"
+                                        alt="Monoposto Alpine F1 - Vista posteriore" class="team-image">
+                                </div>
+                            </div>
+                            <button class="slide-nav prev-slide">&lt;</button>
+                            <button class="slide-nav next-slide">&gt;</button>
+                            <div class="slide-indicators">
+                                <span class="indicator active"></span>
+                                <span class="indicator"></span>
+                                <span class="indicator"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <div class="team-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Team Principal</div>
+                                <div class="stat-value">Bruno Famin</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Campionati</div>
+                                <div class="stat-value">2 (2005-2006 come Renault)</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Prima Partecipazione</div>
+                                <div class="stat-value">2021 (come Alpine)</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Power Unit</div>
+                                <div class="stat-value">Renault</div>
+                            </div>
+                        </div>
+                        <div class="team-description">
+                            <p>Alpine F1 Team è il marchio sportivo di Renault che ha debuttato nel 2021,
+                                portando il nome
+                                del prestigioso marchio Alpine nella Formula 1. La squadra opera dalle
+                                storiche strutture di
+                                Enstone (Regno Unito) per il telaio e Viry-Châtillon (Francia) per la power
+                                unit.</p>
+                            <p>Con una storia che risale ai giorni della Toleman, Benetton e Renault F1, il
+                                team ha
+                                un'eredità ricca di successi, inclusi i titoli mondiali con Fernando Alonso
+                                nel 2005 e 2006.
+                                Sotto la direzione di Bruno Famin, Alpine sta affrontando un processo di
+                                ristrutturazione
+                                con l'obiettivo di tornare ai vertici della Formula 1.</p>
+                        </div>
+                        <div class="team-highlight">
+                            Alpine rappresenta l'orgoglio e l'eccellenza ingegneristica francese nella
+                            Formula 1, combinando
+                            la passione per le corse con l'innovazione tecnica tipica del Gruppo Renault e
+                            il caratteristico
+                            stile francese.
+                        </div>
+                        <div class="drivers-section">
+                            <h3 class="drivers-title">Line-up Piloti 2025</h3>
+                            <div class="drivers-container">
+                                <div class="driver-card">
+                                    <h4 class="driver-name"><span class="driver-number">10</span> Pierre
+                                        Gasly</h4>
+                                    <div class="driver-nationality">
+                                        <img src="foto/bandiere/bandiera_francia.jpg" alt="Bandiera Francia"
+                                            class="driver-flag">
+                                        Francia
+                                    </div>
+                                </div>
+                                <div class="driver-card">
+                                    <h4 class="driver-name"><span class="driver-number">7</span> Jack Doohan
+                                    </h4>
+                                    <div class="driver-nationality">
+                                        <img src="foto/bandiere/bandiera_nuova_zelanda.jpg" alt="Bandiera Nuova Zelanda"
+                                            class="driver-flag"> Nuova Zelanda
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="williams" class="team-section williams">
+                <div class="team-header">
+                    <img src="foto/stemmi/stemma_williams.jpeg" alt="Logo Williams" class="team-logo">
+                    <div class="team-title-container">
+                        <h2 class="team-name">Williams Racing</h2>
+                        <div class="team-base">
+                            <img src="foto/bandiere/bandiera_uk.jpg" alt="Bandiera Regno Unito" class="team-flag">
+                            Grove, Regno Unito
+                        </div>
+                    </div>
+                </div>
+                <div class="team-content">
+                    <div class="team-image-container">
+                        <div class="slideshow-container">
+                            <div class="slideshow-slides">
+                                <div class="slide active">
+                                    <img src="foto/auto/fronte_williams.jpg"
+                                        alt="Monoposto Williams F1 - Vista frontale" class="team-image">
+                                </div>
+                                <div class="slide">
+                                    <img src="foto/auto/laterale_williams.jpg"
+                                        alt="Monoposto Williams F1 - Vista laterale" class="team-image">
+                                </div>
+                                <div class="slide">
+                                    <img src="foto/auto/posteriore_williams.jpg"
+                                        alt="Monoposto Williams F1 - Vista posteriore" class="team-image">
+                                </div>
+                            </div>
+                            <button class="slide-nav prev-slide">&lt;</button>
+                            <button class="slide-nav next-slide">&gt;</button>
+                            <div class="slide-indicators">
+                                <span class="indicator active"></span>
+                                <span class="indicator"></span>
+                                <span class="indicator"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <div class="team-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Team Principal</div>
+                                <div class="stat-value">James Vowles</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Campionati</div>
+                                <div class="stat-value">9 (Ultimo: 1997)</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Prima Partecipazione</div>
+                                <div class="stat-value">1977</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Power Unit</div>
+                                <div class="stat-value">Mercedes</div>
+                            </div>
+                        </div>
+                        <div class="team-description">
+                            <p>Fondata da Sir Frank Williams e Patrick Head nel 1977, Williams Racing è
+                                uno dei team più
+                                vittoriosi nella storia della Formula 1. La scuderia ha vinto nove
+                                campionati costruttori e
+                                sette campionati piloti, consolidando il proprio posto tra le leggende
+                                del motorsport.</p>
+                            <p>Dopo anni di difficoltà e il passaggio di proprietà alla Dorilton Capital
+                                nel 2020, il team è
+                                entrato in una nuova fase sotto la guida di James Vowles, ex stratega
+                                Mercedes. Williams si
+                                sta impegnando a risalire la griglia con un piano di ristrutturazione a
+                                lungo termine e
+                                investimenti nelle infrastrutture.</p>
+                        </div>
+                        <div class="team-highlight">
+                            Williams incarna la vera essenza del racing britannico, con un'eredità di
+                            innovazione
+                            ingegneristica e una determinazione a competere ai massimi livelli
+                            nonostante sia una delle
+                            poche scuderie indipendenti rimaste in Formula 1.
+                        </div>
+                        <div class="drivers-section">
+                            <h3 class="drivers-title">Line-up Piloti 2025</h3>
+                            <div class="drivers-container">
+                                <div class="driver-card">
+                                    <h4 class="driver-name"><span class="driver-number">23</span>
+                                        Alexander Albon</h4>
+                                    <div class="driver-nationality">
+                                        <img src="foto/bandiere/bandiera_thailandia.jpg" alt="Bandiera Thailandia"
+                                            class="driver-flag"> Thailandia
+                                    </div>
+                                </div>
+                                <div class="driver-card">
+                                    <h4 class="driver-name"><span class="driver-number">55</span> Carlos
+                                        Sainz</h4>
+                                    <div class="driver-nationality">
+                                        <img src="foto/bandiere/bandiera_spagna.jpg" alt="Bandiera Spagna"
+                                            class="driver-flag">
+                                        Spagna
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- RB -->
+            <div id="rb" class="team-section racing-bulls">
+                <div class="team-header">
+                    <img src="foto/stemmi/stemma_racing_bulls.jpeg" alt="Logo RB" class="team-logo">
+                    <div class="team-title-container">
+                        <h2 class="team-name">RB Formula One Team</h2>
+                        <div class="team-base">
+                            <img src="foto/bandiere/bandiera_italia.png" alt="Bandiera Italia" class="team-flag">
+                            Faenza, Italia
+                        </div>
+                    </div>
+                </div>
+                <div class="team-content">
+                    <div class="team-image-container">
+                        <div class="slideshow-container">
+                            <div class="slideshow-slides">
+                                <div class="slide active">
+                                    <img src="foto/auto/fronte_racing_bulls.jpg" alt="Monoposto RB F1 - Vista frontale"
+                                        class="team-image">
+                                </div>
+                                <div class="slide">
+                                    <img src="foto/auto/laterale_racing_bulls.jpeg"
+                                        alt="Monoposto RB F1 - Vista laterale" class="team-image">
+                                </div>
+                                <div class="slide">
+                                    <img src="foto/auto/alto_racing_bulls.jpg" alt="Monoposto RB F1 - Vista posteriore"
+                                        class="team-image">
+                                </div>
+                            </div>
+                            <button class="slide-nav prev-slide">&lt;</button>
+                            <button class="slide-nav next-slide">&gt;</button>
+                            <div class="slide-indicators">
+                                <span class="indicator active"></span>
+                                <span class="indicator"></span>
+                                <span class="indicator"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <div class="team-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Team Principal</div>
+                                <div class="stat-value">Laurent Mekies</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Campionati</div>
+                                <div class="stat-value">0</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Prima Partecipazione</div>
+                                <div class="stat-value">2024 (come RB)</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Power Unit</div>
+                                <div class="stat-value">Red Bull Powertrains</div>
+                            </div>
+                        </div>
+                        <div class="team-description">
+                            <p>Precedentemente conosciuta come AlphaTauri e prima ancora come Toro
+                                Rosso, RB è la seconda
+                                squadra della famiglia Red Bull in Formula 1. Dal 2024, il team ha
+                                adottato una nuova
+                                identità come RB Formula One Team, pur mantenendo il suo ruolo di
+                                sviluppo per giovani
+                                talenti.</p>
+                            <p>Con sede a Faenza, in Italia, nelle storiche strutture che furono
+                                della Minardi, RB beneficia
+                                di una stretta collaborazione tecnica con Red Bull Racing. Sotto la
+                                guida di Laurent Mekies,
+                                ex direttore sportivo della Ferrari, il team punta a consolidarsi
+                                come squadra di centro
+                                gruppo con ambizioni di podio.</p>
+                        </div>
+                        <div class="team-highlight">
+                            RB rappresenta il perfetto terreno di formazione per la prossima
+                            generazione di talenti della
+                            Formula 1, combinando l'energia e la creatività tipiche di Red Bull con
+                            la passione italiana del
+                            motorsport.
+                        </div>
+                        <div class="drivers-section">
+                            <h3 class="drivers-title">Line-up Piloti 2025</h3>
+                            <div class="drivers-container">
+                                <div class="driver-card">
+                                    <h4 class="driver-name"><span class="driver-number">30</span>
+                                        Liam Lawson</h4>
+                                    <div class="driver-nationality">
+                                        <img src="foto/bandiere/bandiera_nuova_zelanda.jpg" alt="Bandiera Nuova Zelanda"
+                                            class="driver-flag"> Nuova
+                                        Zelanda
+                                    </div>
+                                </div>
+                                <div class="driver-card">
+                                    <h4 class="driver-name"><span class="driver-number">6</span>
+                                        Isack Hadjar</h4>
+                                    <div class="driver-nationality">
+                                        <img src="foto/bandiere/bandiera_francia.jpg" alt="Bandiera Francia"
+                                            class="driver-flag">
+                                        Francia
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Haas -->
+            <div id="haas" class="team-section haas">
+                <div class="team-header">
+                    <img src="foto/stemmi/stemma_haas.jpeg" alt="Logo Haas" class="team-logo">
+                    <div class="team-title-container">
+                        <h2 class="team-name">MoneyGram Haas F1 Team</h2>
+                        <div class="team-base">
+                            <img src="foto/bandiere/bandiera_usa.jpg" alt="Bandiera Stati Uniti" class="team-flag">
+                            Kannapolis,
+                            Stati
+                            Uniti / Banbury, Regno Unito / Maranello, Italia
+                        </div>
+                    </div>
+                </div>
+                <div class="team-content">
+                    <div class="team-image-container">
+                        <div class="slideshow-container">
+                            <div class="slideshow-slides">
+                                <div class="slide active">
+                                    <img src="foto/auto/fronte_haas.jpg" alt="Monoposto Haas F1 - Vista frontale"
+                                        class="team-image">
+                                </div>
+                                <div class="slide">
+                                    <img src="foto/auto/laterale_haas.jpg" alt="Monoposto Haas F1 - Vista laterale"
+                                        class="team-image">
+                                </div>
+                                <div class="slide">
+                                    <img src="foto/auto/alto_haas.jpg" alt="Monoposto Haas F1 - Vista posteriore"
+                                        class="team-image">
+                                </div>
+                            </div>
+                            <button class="slide-nav prev-slide">&lt;</button>
+                            <button class="slide-nav next-slide">&gt;</button>
+                            <div class="slide-indicators">
+                                <span class="indicator active"></span>
+                                <span class="indicator"></span>
+                                <span class="indicator"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <div class="team-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Team Principal</div>
+                                <div class="stat-value">Ayao Komatsu</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Campionati</div>
+                                <div class="stat-value">0</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Prima Partecipazione</div>
+                                <div class="stat-value">2016</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Power Unit</div>
+                                <div class="stat-value">Ferrari</div>
+                            </div>
+                        </div>
+                        <div class="team-description">
+                            <p>Haas F1 Team è entrato in Formula 1 nel 2016 come prima squadra
+                                americana dopo 30 anni.
+                                Fondato dall'imprenditore Gene Haas, il team ha introdotto un
+                                modello di business innovativo
+                                basato su partnership tecniche estese, in particolare con
+                                Ferrari e Dallara.</p>
+                            <p>Dopo anni di alti e bassi e un difficile periodo durante la
+                                pandemia, il team è ora in fase
+                                di rilancio sotto la direzione tecnica di Ayao Komatsu. Con una
+                                nuova struttura di
+                                leadership e un focus rinnovato sullo sviluppo tecnico, Haas
+                                punta a stabilirsi come
+                                contendente regolare per i punti.</p>
+                        </div>
+                        <div class="team-highlight">
+                            Haas rappresenta l'ingegno e il pragmatismo americano nella Formula
+                            1, dimostrando che è
+                            possibile competere ai massimi livelli con un approccio innovativo e
+                            un modello operativo
+                            efficiente.
+                        </div>
+                        <div class="drivers-section">
+                            <h3 class="drivers-title">Line-up Piloti 2025</h3>
+                            <div class="drivers-container">
+                                <div class="driver-card">
+                                    <h4 class="driver-name"><span class="driver-number">31</span>
+                                        Esteban Ocon</h4>
+                                    <div class="driver-nationality">
+                                        <img src="foto/bandiere/bandiera_francia.jpg" alt="Bandiera Francia"
+                                            class="driver-flag">
+                                        Francia
+                                    </div>
+                                </div>
+                                <div class="driver-card">
+                                    <h4 class="driver-name"><span class="driver-number">87</span>
+                                        Oliver Bearman</h4>
+                                    <div class="driver-nationality">
+                                        <img src="foto/bandiere/bandiera_uk.jpg" alt="Bandiera UK" class="driver-flag">
+                                        Inghilterra
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Kick Sauber -->
+            <div id="kick-sauber" class="team-section sauber">
+                <div class="team-header">
+                    <img src="foto/stemmi/stemma_kick_sauber.jpeg" alt="Logo Kick Sauber" class="team-logo">
+                    <div class="team-title-container">
+                        <h2 class="team-name">Stake F1 Team Kick Sauber</h2>
+                        <div class="team-base">
+                            <img src="foto/bandiere/bandiera_svizzera.jpg" alt="Bandiera Svizzera" class="team-flag">
+                            Hinwil,
+                            Svizzera
+                        </div>
+                    </div>
+                </div>
+                <div class="team-content">
+                    <div class="team-image-container">
+                        <div class="slideshow-container">
+                            <div class="slideshow-slides">
+                                <div class="slide active">
+                                    <img src="foto/auto/frontale_kick_sauber.jpg"
+                                        alt="Monoposto Sauber F1 - Vista frontale" class="team-image">
+                                </div>
+                                <div class="slide">
+                                    <img src="foto/auto/laterale_kick_sauber.jpg"
+                                        alt="Monoposto Sauber F1 - Vista laterale" class="team-image">
+                                </div>
+                                <div class="slide">
+                                    <img src="foto/auto/alto_kick_sauber.jpg"
+                                        alt="Monoposto Sauber F1 - Vista posteriore" class="team-image">
+                                </div>
+                            </div>
+                            <button class="slide-nav prev-slide">&lt;</button>
+                            <button class="slide-nav next-slide">&gt;</button>
+                            <div class="slide-indicators">
+                                <span class="indicator active"></span>
+                                <span class="indicator"></span>
+                                <span class="indicator"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <div class="team-stats">
+                            <div class="stat-item">
+                                <div class="stat-label">Team Principal</div>
+                                <div class="stat-value">Alessandro Alunni Bravi</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Campionati</div>
+                                <div class="stat-value">0</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Prima Partecipazione</div>
+                                <div class="stat-value">1993</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Power Unit</div>
+                                <div class="stat-value">Ferrari</div>
+                            </div>
+                        </div>
+                        <div class="team-description">
+                            <p>Sauber è uno dei nomi storici della Formula 1, con radici nel
+                                motorsport svizzero che
+                                risalgono agli anni '70. Attualmente compete sotto la
+                                denominazione Stake F1 Team Kick
+                                Sauber, in attesa della trasformazione in team ufficiale
+                                Audi dal 2026.</p>
+                            <p>La squadra sta attraversando una fase di transizione
+                                significativa, con importanti
+                                investimenti da parte di Audi che ha acquisito
+                                progressivamente il controllo del team. Le
+                                strutture di Hinwil sono in fase di espansione e
+                                ammodernamento in vista dell'arrivo del
+                                colosso tedesco nel 2026.</p>
+                        </div>
+                        <div class="team-highlight">
+                            Sauber rappresenta un affascinante ponte tra passato e futuro,
+                            mantenendo l'eredità svizzera di
+                            precisione ingegneristica mentre si prepara a diventare la punta
+                            di diamante dell'ambizioso
+                            progetto Audi in Formula 1.
+                        </div>
+                        <div class="drivers-section">
+                            <h3 class="drivers-title">Line-up Piloti 2025</h3>
+                            <div class="drivers-container">
+                                <div class="driver-card">
+                                    <h4 class="driver-name"><span class="driver-number">27</span>
+                                        Nico Hulkenberg
+                                    </h4>
+                                    <div class="driver-nationality">
+                                        <img src="foto/bandiere/bandiera_germania.jpg" alt="Bandiera Germania"
+                                            class="driver-flag">
+                                        Germania
+                                    </div>
+                                </div>
+                                <div class="driver-card">
+                                    <h4 class="driver-name"><span class="driver-number">5</span>
+                                        Gabriel Bortoleto
+                                    </h4>
+                                    <div class="driver-nationality">
+                                        <img src="foto/bandiere/banidera_brasile.jpg" alt="Bandiera Brasile"
+                                            class="driver-flag">
+                                        Brasile
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://www.formula1.com" target="_blank" title="Formula 1 Ufficiale">
+                    <i class="fa-solid fa-flag-checkered"></i> F1
+                </a>
+                <a href="https://www.instagram.com/f1" target="_blank" title="Instagram Formula 1">
+                    <img src="foto/Instagram_icon.png" alt="logo Instagram">
+                </a>
+                <a href="https://www.x.com/f1" target="_blank" title="X Formula 1">
+                    <img src="foto/logo_X.jpg" alt="logo X">
+                </a>
+            </div>
+            <p class="copyright">&copy; 2025 Formula 1 Storia. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piloti Formula 1</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="script/script.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo"><img src="foto/f1-new.png" alt="StemmaF1">
+                </div>
+                <button class="hamburger" id="menu-toggle-btn">
+                    <i class="fas fa-bars">&#9776;</i>
+                </button>
+                <ul class="menu" id="main-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="scuderia.html">Scuderia</a></li>
+                    <li><a href="piloti.html">Piloti</a></li>
+                    <li><a href="calendario.html">calendario</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="classifiche.html">Classifiche</a></li>
+                    <li><a href="login.html">biglietti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="team-logos-container">
+        <button class="scroll-arrow scroll-left" id="scroll-left">
+            <img src="foto/freccia_sinistra.png" alt="frecciaSX">
+        </button>
+
+        <div class="team-logos" id="team-logos-scrollable">
+            <a href="#redbull" class="team-logo">
+                <img src="foto/stemmi/stemma_red_bull_menu.jpg" alt="Red Bull Racing">
+                <span>Red Bull</span>
+            </a>
+            <a href="#ferrari" class="team-logo">
+                <img src="foto/stemmi/stemma_ferrari_menu.jpg" alt="Ferrari">
+                <span>Ferrari</span>
+            </a>
+            <a href="#mercedes" class="team-logo">
+                <img src="foto/stemmi/stemma_mercedes_menu.jpg" alt="Mercedes">
+                <span>Mercedes</span>
+            </a>
+            <a href="#mclaren" class="team-logo">
+                <img src="foto/stemmi/stemma_mclaren_menu.jpg" alt="McLaren">
+                <span>McLaren</span>
+            </a>
+            <a href="#aston-martin" class="team-logo">
+                <img src="foto/stemmi/stemma_aston_martin_menu.jpg" alt="Aston Martin">
+                <span>AstonMartin</span>
+            </a>
+            <a href="#alpine" class="team-logo">
+                <img src="foto/stemmi/stemma_alpine_menu.jpg" alt="Alpine">
+                <span>Alpine</span>
+            </a>
+            <a href="#williams" class="team-logo">
+                <img src="foto/stemmi/stemma_williams_menu.png" alt="Williams">
+                <span>Williams</span>
+            </a>
+            <a href="#racing-bulls" class="team-logo">
+                <img src="foto/stemmi/stemma_racing_bulls_menu.jpg" alt="RB">
+                <span>RB</span>
+            </a>
+            <a href="#haas" class="team-logo">
+                <img src="foto/stemmi/stemma_haas_menu.png" alt="Haas">
+                <span>Haas</span>
+            </a>
+            <a href="#kick-sauber" class="team-logo">
+                <img src="foto/stemmi/stemma_kick_sauber_menu.jpg" alt="Kick Sauber">
+                <span>Kick Sauber</span>
+            </a>
+        </div>
+
+        <button class="scroll-arrow scroll-right" id="scroll-right">
+            <img src="foto/freccia_destra.png" alt="frecciaDX">
+        </button>
+    </div>
+
+    <section class="hero">
+        <div class="container">
+            <h1>PILOTI FORMULA 1</h1>
+            <p>Tutti i protagonisti del Campionato del Mondo di Formula 1</p>
+        </div>
+    </section>
+
+    <main>
+        <div class="container">
+            <!-- Red Bull Section -->
+            <section id="redbull" class="team-section">
+                <div class="team-header">
+                    <img src="foto/stemmi/stemma_red_bull.jpeg" alt="Red Bull Racing Logo">
+                    <h2>Red Bull Racing</h2>
+                </div>
+                <div class="team-info">
+                    <p>Red Bull Racing, con sede a Milton Keynes, Regno Unito, è una delle scuderie più vincenti degli
+                        ultimi anni. Con il genio tecnico Adrian Newey e sotto la direzione di Christian Horner, la
+                        scuderia ha dominato recentemente il campionato con Max Verstappen.</p>
+                </div>
+                <div class="drivers-container">
+                    <!-- Max Verstappen -->
+                    <div class="card-container">
+                        <div class="driver-card">
+                            <div class="card-front">
+                                <div class="driver-image">
+                                    <img id="verstappen-photo" src="foto/piloti/verstappen.jpg" alt="Max Verstappen">
+                                    <div class="driver-number">1</div>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3 class="driver-name">Max Verstappen</h3>
+                                <div class="driver-country">
+                                    <img src="foto/bandiere/bandiera_olanda.jpg" alt="Bandiera Olanda"> Paesi Bassi
+                                </div>
+                                <p>Campione del mondo in carica, Max è noto per il suo stile di guida aggressivo e il
+                                    suo
+                                    talento naturale. Figlio d'arte, ha dimostrato di essere uno dei migliori piloti
+                                    della
+                                    sua generazione.</p>
+                                <div class="driver-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Data di nascita:</span>
+                                        <span class="stat-value">30/09/1997</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Gran Premi:</span>
+                                        <span class="stat-value">189</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Vittorie:</span>
+                                        <span class="stat-value">59</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Podi:</span>
+                                        <span class="stat-value">97</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Yuki Tsunoda (sostituito Sergio Perez) -->
+                    <div class="card-container">
+                        <div class="driver-card">
+                            <div class="card-front">
+                                <div class="driver-image">
+                                    <img src="foto/piloti/tsunoda.jpg" alt="Yuki Tsunoda">
+                                    <div class="driver-number">22</div>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3 class="driver-name">Yuki Tsunoda</h3>
+                                <div class="driver-country">
+                                    <img src="foto/bandiere/bandiera_giappone.png" alt="Bandiera Giappone"> Giappone
+                                </div>
+                                <p>Giovane talento giapponese, Tsunoda è conosciuto per il suo aggressivo stile di guida
+                                    e i suoi rapidi riflessi.</p>
+                                <div class="driver-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Data di nascita:</span>
+                                        <span class="stat-value">11/05/2000</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Gran Premi:</span>
+                                        <span class="stat-value">85</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Vittorie:</span>
+                                        <span class="stat-value">0</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Podi:</span>
+                                        <span class="stat-value">1</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Ferrari Section -->
+            <section id="ferrari" class="team-section">
+                <div class="team-header">
+                    <img src="foto/stemmi/stemma_ferrari.jpeg" alt="Ferrari Logo">
+                    <h2>Scuderia Ferrari</h2>
+                </div>
+                <div class="team-info">
+                    <p>La Scuderia Ferrari è la squadra più storica e vincente della Formula 1, presente fin dal primo
+                        campionato del 1950. Con sede a Maranello, Italia, il "Cavallino Rampante" rappresenta
+                        tradizione, passione e eccellenza nel motorsport.</p>
+                </div>
+                <div class="drivers-container">
+                    <!-- Charles Leclerc -->
+                    <div class="card-container">
+                        <div class="driver-card">
+                            <div class="card-front">
+                                <div class="driver-image">
+                                    <img src="foto/piloti/leclerc.jpg" alt="Charles Leclerc">
+                                    <div class="driver-number">16</div>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3 class="driver-name">Charles Leclerc</h3>
+                                <div class="driver-country">
+                                    <img src="foto/bandiere/bandiera_monaco.jpg" alt="Bandiera Monaco"> Monaco
+                                </div>
+                                <p>Considerato uno dei talenti più puri della sua generazione, Leclerc è noto per la sua
+                                    velocità in qualifica e la sua capacità di estrarre il massimo dalla vettura in ogni
+                                    condizione.</p>
+                                <div class="driver-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Data di nascita:</span>
+                                        <span class="stat-value">16/10/1997</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Gran Premi:</span>
+                                        <span class="stat-value">131</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Vittorie:</span>
+                                        <span class="stat-value">5</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Podi:</span>
+                                        <span class="stat-value">28</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lewis Hamilton -->
+                    <div class="card-container">
+                        <div class="driver-card">
+                            <div class="card-front">
+                                <div class="driver-image">
+                                    <img src="foto/piloti/hamilton.jpg" alt="Lewis Hamilton">
+                                    <div class="driver-number">44</div>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3 class="driver-name">Lewis Hamilton</h3>
+                                <div class="driver-country">
+                                    <img src="foto/bandiere/bandiera_uk.jpg" alt="Bandiera Regno Unito"> Regno Unito
+                                </div>
+                                <p>Leggenda della Formula 1 con sette titoli mondiali, Hamilton si è unito alla Ferrari
+                                    nel
+                                    2025. La sua esperienza e il suo talento eccezionale lo rendono uno dei piloti più
+                                    completi della storia.</p>
+                                <div class="driver-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Data di nascita:</span>
+                                        <span class="stat-value">07/01/1985</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Gran Premi:</span>
+                                        <span class="stat-value">340</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Vittorie:</span>
+                                        <span class="stat-value">103</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Podi:</span>
+                                        <span class="stat-value">197</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mercedes Section -->
+            <section id="mercedes" class="team-section">
+                <div class="team-header">
+                    <img src="foto/stemmi/stemma_mercedes.jpeg" alt="Mercedes Logo">
+                    <h2>Mercedes-AMG Petronas</h2>
+                </div>
+                <div class="team-info">
+                    <p>Mercedes ha dominato l'era ibrida della Formula 1 vincendo otto campionati costruttori
+                        consecutivi dal 2014 al 2021. Con sede a Brackley, Regno Unito, il team delle "Frecce d'Argento"
+                        continua a essere uno dei protagonisti principali del campionato.</p>
+                </div>
+                <div class="drivers-container">
+                    <!-- George Russell -->
+                    <div class="card-container">
+                        <div class="driver-card">
+                            <div class="card-front">
+                                <div class="driver-image">
+                                    <img src="foto/piloti/russell.jpg" alt="George Russell">
+                                    <div class="driver-number">63</div>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3 class="driver-name">George Russell</h3>
+                                <div class="driver-country">
+                                    <img src="foto/bandiere/bandiera_uk.jpg" alt="Bandiera Regno Unito"> Regno Unito
+                                </div>
+                                <p>Russell è considerato uno dei talenti più brillanti della nuova generazione. La sua
+                                    precisione in qualifica e la sua costanza in gara lo hanno fatto emergere come uno
+                                    dei
+                                    piloti più promettenti della griglia.</p>
+                                <div class="driver-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Data di nascita:</span>
+                                        <span class="stat-value">15/02/1998</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Gran Premi:</span>
+                                        <span class="stat-value">103</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Vittorie:</span>
+                                        <span class="stat-value">1</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Podi:</span>
+                                        <span class="stat-value">11</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kimi Antonelli -->
+                    <div class="card-container">
+                        <div class="driver-card">
+                            <div class="card-front">
+                                <div class="driver-image">
+                                    <img src="foto/piloti/antonelli.jpg" alt="Kimi Antonelli">
+                                    <div class="driver-number">77</div>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3 class="driver-name">Kimi Antonelli</h3>
+                                <div class="driver-country">
+                                    <img src="foto/bandiere/bandiera_italia.png" alt="Bandiera Italia"> Italia
+                                </div>
+                                <p>Giovane talento italiano proveniente dall'Academy Mercedes, Antonelli è salito
+                                    direttamente dalla Formula 2 alla massima categoria, dimostrando un talento
+                                    straordinario nonostante la giovane età.</p>
+                                <div class="driver-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Data di nascita:</span>
+                                        <span class="stat-value">25/08/2006</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Gran Premi:</span>
+                                        <span class="stat-value">9</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Vittorie:</span>
+                                        <span class="stat-value">0</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Podi:</span>
+                                        <span class="stat-value">1</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- McLaren Section -->
+            <section id="mclaren" class="team-section">
+                <div class="team-header">
+                    <img src="foto/stemmi/stemma_mclaren.jpeg" alt="McLaren Logo">
+                    <h2>McLaren F1 Team</h2>
+                </div>
+                <div class="team-info">
+                    <p>McLaren è una delle squadre più storiche e vincenti della Formula 1, con sede a Woking, Regno
+                        Unito. Dopo un periodo di difficoltà, la squadra è tornata competitiva grazie a un importante
+                        lavoro di ristrutturazione tecnica.</p>
+                </div>
+                <div class="drivers-container">
+                    <!-- Lando Norris -->
+                    <div class="card-container">
+                        <div class="driver-card">
+                            <div class="card-front">
+                                <div class="driver-image">
+                                    <img src="foto/piloti/norris.jpg" alt="Lando Norris">
+                                    <div class="driver-number">4</div>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3 class="driver-name">Lando Norris</h3>
+                                <div class="driver-country">
+                                    <img src="foto/bandiere/bandiera_uk.jpg" alt="Bandiera Regno Unito"> Regno Unito
+                                </div>
+                                <p>Talentuoso pilota britannico, Norris è noto per la sua velocità e le sue capacità in
+                                    pista
+                                    e ha contribuito significativamente al ritorno di McLaren ai vertici della Formula
+                                    1.</p>
+                                <div class="driver-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Data di nascita:</span>
+                                        <span class="stat-value">13/11/1999</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Gran Premi:</span>
+                                        <span class="stat-value">118</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Vittorie:</span>
+                                        <span class="stat-value">3</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Podi:</span>
+                                        <span class="stat-value">19</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Oscar Piastri -->
+                    <div class="card-container">
+                        <div class="driver-card">
+                            <div class="card-front">
+                                <div class="driver-image">
+                                    <img src="foto/piloti/piastri.jpg" alt="Oscar Piastri">
+                                    <div class="driver-number">81</div>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3 class="driver-name">Oscar Piastri</h3>
+                                <div class="driver-country">
+                                    <img src="foto/bandiere/bandiera_australiana.jpg" alt="Bandiera Australia">
+                                    Australia
+                                </div>
+                                <p>Giovane talento australiano, Piastri ha impressionato fin dal suo debutto in Formula
+                                    1
+                                    dimostrando una maturità e una velocità sorprendenti per un pilota della sua
+                                    esperienza.</p>
+                                <div class="driver-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Data di nascita:</span>
+                                        <span class="stat-value">06/04/2001</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Gran Premi:</span>
+                                        <span class="stat-value">48</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Vittorie:</span>
+                                        <span class="stat-value">2</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Podi:</span>
+                                        <span class="stat-value">8</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Aston Martin Section -->
+            <section id="aston-martin" class="team-section">
+                <div class="team-header">
+                    <img src="foto/stemmi/stemma_aston_martin.jpeg" alt="Aston Martin Logo">
+                    <h2>Aston Martin F1 Team</h2>
+                </div>
+                <div class="team-info">
+                    <p>Aston Martin è tornata in Formula 1 nel 2021 dopo aver rilevato la Racing Point. Con importanti
+                        investimenti
+                        e la visione di Lawrence Stroll, il team punta a diventare un contendente al titolo nei prossimi
+                        anni.</p>
+                </div>
+                <div class="drivers-container">
+                    <!-- Fernando Alonso -->
+                    <div class="card-container">
+                        <div class="driver-card">
+                            <div class="card-front">
+                                <div class="driver-image">
+                                    <img src="foto/piloti/alonso.jpg" alt="Fernando Alonso">
+                                    <div class="driver-number">14</div>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3 class="driver-name">Fernando Alonso</h3>
+                                <div class="driver-country">
+                                    <img src="foto/bandiere/bandiera_spagna.jpg" alt="Bandiera Spagna"> Spagna
+                                </div>
+                                <p>Due volte campione del mondo, Alonso è considerato uno dei piloti più completi nella
+                                    storia
+                                    della Formula 1. La sua esperienza e le sue capacità lo rendono ancora oggi uno dei
+                                    migliori della griglia.</p>
+                                <div class="driver-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Data di nascita:</span>
+                                        <span class="stat-value">29/07/1981</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Gran Premi:</span>
+                                        <span class="stat-value">385</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Vittorie:</span>
+                                        <span class="stat-value">32</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Podi:</span>
+                                        <span class="stat-value">106</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lance Stroll -->
+                    <div class="card-container">
+                        <div class="driver-card">
+                            <div class="card-front">
+                                <div class="driver-image">
+                                    <img src="foto/piloti/stroll.jpg" alt="Lance Stroll">
+                                    <div class="driver-number">18</div>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3 class="driver-name">Lance Stroll</h3>
+                                <div class="driver-country">
+                                    <img src="foto/bandiere/bandiera_canada.jpg" alt="Bandiera Canada"> Canada
+                                </div>
+                                <p>Figlio del proprietario della squadra, Stroll ha dimostrato di avere talento,
+                                    specialmente
+                                    in condizioni difficili. Il suo obiettivo è continuare a crescere e portare il team
+                                    verso i vertici.</p>
+                                <div class="driver-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Data di nascita:</span>
+                                        <span class="stat-value">29/10/1998</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Gran Premi:</span>
+                                        <span class="stat-value">157</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Vittorie:</span>
+                                        <span class="stat-value">0</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Podi:</span>
+                                        <span class="stat-value">3</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Alpine Section -->
+            <section id="alpine" class="team-section">
+                <div class="team-header">
+                    <img src="foto/stemmi/stemma_alpine.jpeg" alt="Alpine Logo">
+                    <h2>Alpine F1 Team</h2>
+                </div>
+                <div class="team-info">
+                    <p>Alpine è il team di Formula 1 che rappresenta la casa automobilistica francese Renault. Con sede
+                        a Enstone, Regno Unito, il team compete sotto i colori blu, bianco e rosso della bandiera
+                        francese e punta a riaffermarsi tra i migliori costruttori del campionato.</p>
+                </div>
+                <div class="drivers-container">
+                    <!-- Pierre Gasly -->
+                    <div class="card-container">
+                        <div class="driver-card">
+                            <div class="card-front">
+                                <div class="driver-image">
+                                    <img src="foto/piloti/gasly.jpg" alt="Pierre Gasly">
+                                    <div class="driver-number">10</div>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3 class="driver-name">Pierre Gasly</h3>
+                                <div class="driver-country">
+                                    <img src="foto/bandiere/bandiera_francia.jpg" alt="Bandiera Francia"> Francia
+                                </div>
+                                <p>Gasly è un pilota determinato che ha dimostrato grande resilienza nella sua carriera.
+                                    Vincitore di un Gran Premio con l'Alpha Tauri, è riconosciuto per la sua consistenza
+                                    e capacità di adattamento.</p>
+                                <div class="driver-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Data di nascita:</span>
+                                        <span class="stat-value">07/02/1996</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Gran Premi:</span>
+                                        <span class="stat-value">142</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Vittorie:</span>
+                                        <span class="stat-value">1</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Podi:</span>
+                                        <span class="stat-value">4</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Franco Colapinto -->
+                    <div class="card-container">
+                        <div class="driver-card">
+                            <div class="card-front">
+                                <div class="driver-image">
+                                    <img src="foto/piloti/colapinto.jpg" alt="Franco Colapinto">
+                                    <div class="driver-number">43</div>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3 class="driver-name">Franco Colapinto</h3>
+                                <div class="driver-country">
+                                    <img src="foto/bandiere/Flag_of_Argentina.svg.webp" alt="Bandiera Argentina">
+                                    Argentina
+                                </div>
+                                <p>Giovane talento argentino, Colapinto ha impressionato nelle serie formative prima di
+                                    essere chiamato a sostituire Logan Sargeant in Williams.</p>
+                                <div class="driver-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Data di nascita:</span>
+                                        <span class="stat-value">27/05/2003</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Gran Premi:</span>
+                                        <span class="stat-value">8</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Vittorie:</span>
+                                        <span class="stat-value">0</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Podi:</span>
+                                        <span class="stat-value">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+            </section>
+
+            <!-- Williams Section -->
+            <section id="williams" class="team-section">
+                <div class="team-header">
+                    <img src="foto/stemmi/stemma_williams.jpeg" alt="Williams Logo">
+                    <h2>Williams Racing</h2>
+                </div>
+                <div class="team-info">
+                    <p>Williams è una delle squadre più storiche e decorate della Formula 1, con nove titoli
+                        costruttori. Fondata da Sir Frank Williams, la squadra con sede a Grove, Regno Unito, è in fase
+                        di rilancio dopo anni di difficoltà.</p>
+                </div>
+                <div class="drivers-container">
+                    <!-- Carlos Sainz -->
+                    <div class="card-container">
+                        <div class="driver-card">
+                            <div class="card-front">
+                                <div class="driver-image">
+                                    <img src="foto/piloti/sainz.jpg" alt="Carlos Sainz">
+                                    <div class="driver-number">55</div>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3 class="driver-name">Carlos Sainz</h3>
+                                <div class="driver-country">
+                                    <img src="foto/bandiere/bandiera_spagna.jpg" alt="Bandiera Spagna"> Spagna
+                                </div>
+                                <p>Passato da Ferrari a Williams, Sainz è un pilota completo e costante. Con la sua
+                                    esperienza e tenacia, rappresenta una figura chiave nel piano di rilancio della
+                                    storica scuderia britannica.</p>
+                                <div class="driver-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Data di nascita:</span>
+                                        <span class="stat-value">01/09/1994</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Gran Premi:</span>
+                                        <span class="stat-value">188</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Vittorie:</span>
+                                        <span class="stat-value">3</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Podi:</span>
+                                        <span class="stat-value">18</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Alexander Albon -->
+                    <div class="card-container">
+                        <div class="driver-card">
+                            <div class="card-front">
+                                <div class="driver-image">
+                                    <img src="foto/piloti/albon.jpg" alt="Alexander Albon">
+                                    <div class="driver-number">23</div>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3 class="driver-name">Alexander Albon</h3>
+                                <div class="driver-country">
+                                    <img src="foto/bandiere/bandiera_thailandia.jpg" alt="Bandiera Thailandia">
+                                    Thailandia
+                                </div>
+                                <p>Albon ha dimostrato grande resilienza e talento dopo essere tornato in Formula 1 con
+                                    Williams. Le sue prestazioni con una vettura non sempre competitiva hanno
+                                    sottolineato le sue capacità di pilota.</p>
+                                <div class="driver-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Data di nascita:</span>
+                                        <span class="stat-value">23/03/1996</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Gran Premi:</span>
+                                        <span class="stat-value">89</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Vittorie:</span>
+                                        <span class="stat-value">0</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Podi:</span>
+                                        <span class="stat-value">2</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Haas Section -->
+            <section id="haas" class="team-section">
+                <div class="team-header">
+                    <img src="foto/stemmi/stemma_haas.jpeg" alt="Haas Logo">
+                    <h2>Haas F1 Team</h2>
+                </div>
+                <div class="team-info">
+                    <p>Haas è la scuderia più giovane della Formula 1, entrata nel campionato nel 2016. Il team
+                        americano, con sede operativa a Banbury, Regno Unito, punta a consolidare la propria presenza
+                        nella categoria con una nuova direzione tecnica.</p>
+                </div>
+                <div class="drivers-container">
+                    <!-- Oliver Bearman -->
+                    <div class="card-container">
+                        <div class="driver-card">
+                            <div class="card-front">
+                                <div class="driver-image">
+                                    <img src="foto/piloti/bearman.jpg" alt="Oliver Bearman">
+                                    <div class="driver-number">50</div>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3 class="driver-name">Oliver Bearman</h3>
+                                <div class="driver-country">
+                                    <img src="foto/bandiere/bandiera_uk.jpg" alt="Bandiera Regno Unito"> Regno Unito
+                                </div>
+                                <p>Giovane talento britannico, Bearman ha impressionato nel suo debutto in Formula 1
+                                    sostituendo Carlos Sainz in Ferrari nel 2024. </p>
+                                <div class="driver-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Data di nascita:</span>
+                                        <span class="stat-value">08/05/2005</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Gran Premi:</span>
+                                        <span class="stat-value">10</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Vittorie:</span>
+                                        <span class="stat-value">0</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Podi:</span>
+                                        <span class="stat-value">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Esteban Ocon -->
+                    <div class="card-container">
+                        <div class="driver-card">
+                            <div class="card-front">
+                                <div class="driver-image">
+                                    <img src="foto/piloti/ocon.jpg" alt="Esteban Ocon">
+                                    <div class="driver-number">31</div>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3 class="driver-name">Esteban Ocon</h3>
+                                <div class="driver-country">
+                                    <img src="foto/bandiere/bandiera_francia.jpg" alt="Bandiera Francia"> Francia
+                                </div>
+                                <p>Vincitore del Gran Premio d'Ungheria 2021, Ocon porta esperienza e velocità alla
+                                    Haas.</p>
+                                <div class="driver-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Data di nascita:</span>
+                                        <span class="stat-value">17/09/1996</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Gran Premi:</span>
+                                        <span class="stat-value">142</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Vittorie:</span>
+                                        <span class="stat-value">1</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Podi:</span>
+                                        <span class="stat-value">3</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Racing Bulls Section -->
+            <section id="racing-bulls" class="team-section">
+                <div class="team-header">
+                    <img src="foto/stemmi/stemma_racing_bulls.jpeg" alt="Racing Bulls Logo">
+                    <h2>Racing Bulls</h2>
+                </div>
+                <div class="team-info">
+                    <p>Racing Bulls (precedentemente AlphaTauri e Toro Rosso) è la seconda squadra di Red Bull Racing.
+                        Con sede a Faenza, Italia, il team ha cambiato identità rimanendo fedele alla missione di
+                        sviluppare giovani talenti per il team principale.</p>
+                </div>
+                <div class="drivers-container">
+                    <!-- Liam Lawson -->
+                    <div class="card-container">
+                        <div class="driver-card">
+                            <div class="card-front">
+                                <div class="driver-image">
+                                    <img src="foto/piloti/lawson-racing-bulls.jpg" alt="Liam Lawson">
+                                    <div class="driver-number">15</div>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3 class="driver-name">Liam Lawson</h3>
+                                <div class="driver-country">
+                                    <img src="foto/bandiere/bandiera_nuova_zelanda.jpg" alt="Bandiera Nuova Zelanda">
+                                    Nuova Zelanda
+                                </div>
+                                <p>Pilota neozelandese dal talento cristallino, Lawson ha impressionato durante le sue
+                                    sostituzioni in Formula 1 nel 2023 e 2024. </p>
+                                <div class="driver-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Data di nascita:</span>
+                                        <span class="stat-value">11/02/2002</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Gran Premi:</span>
+                                        <span class="stat-value">12</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Vittorie:</span>
+                                        <span class="stat-value">0</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Podi:</span>
+                                        <span class="stat-value">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Isack Hadjar -->
+                    <div class="card-container">
+                        <div class="driver-card">
+                            <div class="card-front">
+                                <div class="driver-image">
+                                    <img src="foto/piloti/hadjar.jpg" alt="Isack Hadjar">
+                                    <div class="driver-number">38</div>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3 class="driver-name">Isack Hadjar</h3>
+                                <div class="driver-country">
+                                    <img src="foto/bandiere/bandiera_francia.jpg" alt="Bandiera Francia"> Francia
+                                </div>
+                                <p>Talento emergente del programma Red Bull Junior Team, Hadjar ha impressionato nelle
+                                    categorie propedeutiche per il suo stile di guida aggressivo e le sue capacità di
+                                    sorpasso. </p>
+                                <div class="driver-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Data di nascita:</span>
+                                        <span class="stat-value">28/09/2004</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Gran Premi:</span>
+                                        <span class="stat-value">5</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Vittorie:</span>
+                                        <span class="stat-value">0</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Podi:</span>
+                                        <span class="stat-value">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Kick Sauber Section -->
+            <section id="kick-sauber" class="team-section">
+                <div class="team-header">
+                    <img src="foto/stemmi/stemma_kick_sauber.jpeg" alt="Kick Sauber Logo">
+                    <h2>Kick Sauber</h2>
+                </div>
+                <div class="team-info">
+                    <p>Kick Sauber rappresenta la fase di transizione del team svizzero prima di diventare ufficialmente
+                        Audi dal 2026. Con sede a Hinwil, Svizzera, la squadra sta attraversando un importante processo
+                        di ristrutturazione in vista dell'arrivo del costruttore tedesco.</p>
+                </div>
+                <div class="drivers-container">
+                    <!-- Nico Hulkenberg -->
+                    <div class="card-container">
+                        <div class="driver-card">
+                            <div class="card-front">
+                                <div class="driver-image">
+                                    <img src="foto/piloti/hulkenberg.jpg" alt="Nico Hulkenberg">
+                                    <div class="driver-number">27</div>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3 class="driver-name">Nico Hulkenberg</h3>
+                                <div class="driver-country">
+                                    <img src="foto/bandiere/bandiera_germania.jpg" alt="Bandiera Germania"> Germania
+                                </div>
+                                <p>Veterano della Formula 1, Hulkenberg porta esperienza e velocità al progetto
+                                    Sauber/Audi. </p>
+                                <div class="driver-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Data di nascita:</span>
+                                        <span class="stat-value">19/08/1987</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Gran Premi:</span>
+                                        <span class="stat-value">209</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Vittorie:</span>
+                                        <span class="stat-value">0</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Podi:</span>
+                                        <span class="stat-value">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gabriel Bortoleto -->
+                    <div class="card-container">
+                        <div class="driver-card">
+                            <div class="card-front">
+                                <div class="driver-image">
+                                    <img src="foto/piloti/bortoleto.jpg" alt="Gabriel Bortoleto">
+                                    <div class="driver-number">42</div>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h3 class="driver-name">Gabriel Bortoleto</h3>
+                                <div class="driver-country">
+                                    <img src="foto/bandiere/banidera_brasile.jpg" alt="Bandiera Brasile"> Brasile
+                                </div>
+                                <p>Giovane talento brasiliano emerso dalle categorie propedeutiche, Bortoleto
+                                    rappresenta una grande scommessa per il futuro di Sauber/Audi. </p>
+                                <div class="driver-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Data di nascita:</span>
+                                        <span class="stat-value">14/10/2004</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Gran Premi:</span>
+                                        <span class="stat-value">5</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Vittorie:</span>
+                                        <span class="stat-value">0</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Podi:</span>
+                                        <span class="stat-value">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://www.formula1.com" target="_blank" title="Formula 1 Ufficiale">
+                    <i class="fa-solid fa-flag-checkered"></i> F1
+                </a>
+                <a href="https://www.instagram.com/f1" target="_blank" title="Instagram Formula 1">
+                    <img src="foto/Instagram_icon.png" alt="logo Instagram">
+                </a>
+                <a href="https://www.x.com/f1" target="_blank" title="X Formula 1">
+                    <img src="foto/logo_X.jpg" alt="logo X">
+                </a>
+            </div>
+            <p class="copyright">&copy; 2025 Formula 1 Storia. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

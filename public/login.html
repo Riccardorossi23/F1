@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Tickets - Login</title>
+    <link rel="stylesheet" href="/style/style.css">
+    <script src="script/script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo"><img src="foto/f1-new.png" alt="StemmaF1">
+                </div>
+                <button class="hamburger" id="menu-toggle-btn">
+                    <i class="fas fa-bars">&#9776;</i>
+                </button>
+                <ul class="menu" id="main-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="scuderia.html">Scuderia</a></li>
+                    <li><a href="piloti.html">Piloti</a></li>
+                    <li><a href="calendario.html">calendario</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="classifiche.html">Classifiche</a></li>
+                    <li><a href="login.html">biglietti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+<div class="auth-container">
+    <div class="logo">🏎️ F1 TICKETS</div>
+    
+    <div class="auth-tabs">
+        <button class="tab-button active" onclick="switchTab('login')">Login</button>
+        <button class="tab-button" onclick="switchTab('register')">Registrati</button>
+    </div>
+
+    <div id="messageContainer"></div>
+
+    <div class="form-container">
+        <!-- Form Login -->
+        <div id="loginForm" class="form-section active">
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" placeholder="Inserisci la tua email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" placeholder="Inserisci la tua password" required>
+                </div>
+                
+                <button type="submit" class="submit-button" id="loginButton">
+                    Accedi
+                </button>
+            </form>
+        </div>
+
+        <!-- Form Registrazione -->
+        <div id="registerForm" class="form-section">
+            <form onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label for="registerNome">Nome</label>
+                    <input type="text" id="registerNome" placeholder="Il tuo nome" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="registerCognome">Cognome</label>
+                    <input type="text" id="registerCognome" placeholder="Il tuo cognome" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" placeholder="La tua email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="registerCartaId">Codice Carta d'Identità</label>
+                    <input type="text" id="registerCartaId" placeholder="Codice della carta d'identità" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" placeholder="Crea una password" required minlength="6">
+                    <div class="password-requirements">
+                        <span class="requirement" id="minLength">• Almeno 6 caratteri</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">Conferma Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Ripeti la password" required>
+                </div>
+                
+                <button type="submit" class="submit-button" id="registerButton">
+                    Registrati
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="footer-content">
+        <div class="social-links">
+            <a href="https://www.formula1.com" target="_blank" title="Formula 1 Ufficiale">
+                <img src="foto/f1-new.png" alt="logo f1">
+            </a>
+            <a href="https://www.instagram.com/f1" target="_blank" title="Instagram Formula 1">
+                <img src="foto/Instagram_icon.png" alt="logo Instagram">
+            </a>
+            <a href="https://www.x.com/f1" target="_blank" title="X Formula 1">
+                <img src="foto/logo_X.jpg" alt="logo X">
+            </a>
+        </div>
+        <p class="copyright">&copy; 2025 Formula 1 Storia. Tutti i diritti riservati.</p>
+    </div>
+</footer>
+</body>
+
+</html>
