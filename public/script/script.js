@@ -55,8 +55,8 @@ document.addEventListener('DOMContentLoaded', function() {
         section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
         observer.observe(section);
     });
-    
-//countdown gare//
+
+    //countdown gare//
     // Date programmate per i Gran Premi del 2025
     const raceDates = {
         "Melbourne Grand Prix Circuit": "2025-03-16T05:00:00Z",
@@ -330,11 +330,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Aggiorna subito all'avvio
+    // VERSIONE STATICA: Aggiorna solo all'avvio della pagina
     updateAllCountdowns();
-    
-    // Aggiorna ogni secondo
-    setInterval(updateAllCountdowns, 1000);
 
     // Trova tutti i container degli slideshow nella pagina
     const slideshowContainers = document.querySelectorAll('.slideshow-container');
@@ -409,19 +406,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 showSlide(index);
             });
         });
-        
-        // Opzionale: avvia lo slideshow automatico
-        let slideInterval = setInterval(nextSlide, 5000); // Cambia slide ogni 5 secondi
-        
-        // Opzionale: metti in pausa lo slideshow quando il mouse è sopra
-        container.addEventListener('mouseenter', function() {
-            clearInterval(slideInterval);
-        });
-        
-        // Opzionale: riprendi lo slideshow quando il mouse esce
-        container.addEventListener('mouseleave', function() {
-            slideInterval = setInterval(nextSlide, 5000);
-        });
     });
 
     // Inizializza gli elementi di scorrimento per i loghi delle scuderie
@@ -432,6 +416,7 @@ document.addEventListener('DOMContentLoaded', function() {
  * Funzione per scorrere orizzontalmente i loghi delle scuderie
  * @param {string} direction - Direzione di scorrimento ('left' o 'right')
  */
+
 function scrollTeamLogos(direction) {
     // Ottiene il contenitore dei loghi delle scuderie
     const teamLogosContainer = document.querySelector('.team-logos');
@@ -670,6 +655,7 @@ function initApp() {
 function loadData() {
     loadDrivers();
     loadRaces();
+    loadConstructors();
     updateStats();
 }
 
@@ -1237,9 +1223,13 @@ async function handleRegister(event) {
 }
 
 // ==================== GESTIONE CIRCUITI E BIGLIETTI ====================
-
+/**
+ * Carica e visualizza tutti i circuiti disponibili
+ * Implementa la logica per distinguere gare passate da quelle future
+ */
 async function loadCircuits() {
     try {
+        // Recupera i dati dei circuiti dal server
         const response = await fetch('/Circuiti');
         
         if (!response.ok) {
@@ -1251,25 +1241,48 @@ async function loadCircuits() {
         const container = document.getElementById('circuitsContainer');
         if (!container) return;
         
+        // Gestisce il caso di nessun circuito disponibile
         if (circuits.length === 0) {
             container.innerHTML = '<p>Nessun circuito disponibile al momento.</p>';
             return;
         }
 
+        // Pulisce il container e imposta la classe CSS
         container.innerHTML = '';
         container.className = 'circuits-grid';
 
+        // Itera attraverso ogni circuito per creare le card
         circuits.forEach(circuit => {
             const card = document.createElement('div');
-            card.className = 'circuit-card';
-            card.onclick = () => selectCircuit(circuit);
             
+            // FUNZIONALITÀ AGGIUNTA: Controllo stato della gara
+            // Determina se la gara è già avvenuta confrontando le date
+            const raceDate = new Date(circuit.Giorno);
+            const today = new Date();
+            const isPastRace = raceDate < today;
+            
+            // FUNZIONALITÀ AGGIUNTA: Classi CSS condizionali
+            // Applica classe 'past-race' per gare già avvenute
+            card.className = `circuit-card ${isPastRace ? 'past-race' : ''}`;
+            
+            // FUNZIONALITÀ AGGIUNTA: Disabilitazione interazione
+            // Rimuove il click handler per le gare passate
+            if (!isPastRace) {
+                card.onclick = () => selectCircuit(circuit);
+            }
+            
+            // FUNZIONALITÀ AGGIUNTA: Indicatore visivo stato gara
+            // Mostra messaggio "GARA GIÀ AVVENUTA" per gare passate
+            const statusText = isPastRace ? '🏁 GARA GIÀ AVVENUTA' : '';
+            
+            // Costruisce l'HTML della card con informazioni base e stato
             card.innerHTML = `
                 <div class="circuit-name">${circuit.Nome}</div>
                 <div class="circuit-info">
                     📍 ${circuit.Nazione}<br>
                     📅 ${new Date(circuit.Giorno).toLocaleDateString('it-IT')}
                 </div>
+                ${statusText ? `<div class="race-status">${statusText}</div>` : ''}
             `;
             
             container.appendChild(card);
@@ -1280,17 +1293,37 @@ async function loadCircuits() {
     }
 }
 
+/**
+ * Gestisce la selezione di un circuito
+ * Implementa controllo di sicurezza per gare passate
+ */
 async function selectCircuit(circuit) {
+    // FUNZIONALITÀ AGGIUNTA: Controllo sicurezza gare passate
+    // Doppio controllo per impedire selezione di gare già avvenute
+    const raceDate = new Date(circuit.Giorno);
+    const today = new Date();
+    if (raceDate < today) {
+        showMessage('Non è possibile selezionare una gara già avvenuta.', 'error');
+        return;
+    }
+    
+    // Rimuove selezione precedente da tutte le card
     document.querySelectorAll('.circuit-card').forEach(card => {
         card.classList.remove('selected');
     });
     
+    // Aggiunge classe 'selected' alla card cliccata
     event.target.closest('.circuit-card').classList.add('selected');
     selectedCircuit = circuit;
     
+    // Carica i biglietti per il circuito selezionato
     await loadTickets(circuit.CircuitoID);
 }
 
+/**
+ * Carica e visualizza i biglietti per un circuito specifico
+ * Implementa controlli aggiuntivi per gare passate
+ */
 async function loadTickets(circuitId) {
     try {
         console.log("Circuit ID usato:", circuitId);
@@ -1310,25 +1343,40 @@ async function loadTickets(circuitId) {
         
         container.style.display = 'block';
         
+        // Gestisce il caso di nessun biglietto disponibile
         if (tickets.length === 0) {
             grid.innerHTML = '<p>Nessun biglietto disponibile per questo circuito.</p>';
             return;
         }
 
+        // FUNZIONALITÀ AGGIUNTA: Controllo aggiuntivo sicurezza
+        // Verifica ulteriore che la gara non sia passata prima di mostrare biglietti
+        const raceDate = new Date(selectedCircuit.Giorno);
+        const today = new Date();
+        if (raceDate < today) {
+            // FUNZIONALITÀ AGGIUNTA: Messaggio personalizzato gare passate
+            grid.innerHTML = '<div class="past-race-message"><p>🏁 Gara già avvenuta.</p></div>';
+            return;
+        }
+
+        // Pulisce la griglia e inizializza quantità biglietti
         grid.innerHTML = '';
         ticketQuantities = {};
 
+        // Crea card per ogni biglietto disponibile
         tickets.forEach(ticket => {
             ticketQuantities[ticket.BigliettoID] = 0;
             
             const card = document.createElement('div');
             card.className = 'ticket-card';
             
+            // Determina classe e testo per disponibilità
             const availabilityClass = ticket.Disponibilita > 0 ? 'ticket-availability' : 'ticket-unavailable';
             const availabilityText = ticket.Disponibilita > 0 
                 ? `✅ Disponibili: ${ticket.Disponibilita}`
                 : '❌ Esaurito';
             
+            // Costruisce HTML della card biglietto con controlli quantità
             card.innerHTML = `
                 <div class="ticket-sector">${getSectorIcon(ticket.TipoPosto)} ${ticket.TipoPosto}</div>
                 <div class="ticket-price">€${Number(ticket.Prezzo).toFixed(2)}</div>
@@ -1336,9 +1384,9 @@ async function loadTickets(circuitId) {
                 
                 ${ticket.Disponibilita > 0 ? `
                     <div class="quantity-selector">
-                        <button type="button" class="quantity-btn" onclick="changeQuantity(${ticket.BigliettoID}, -1)">-</button>
-                        <div class="quantity-display" id="qty-${ticket.BigliettoID}">0</div>
                         <button type="button" class="quantity-btn" onclick="changeQuantity(${ticket.BigliettoID}, 1)">+</button>
+                        <div class="quantity-display" id="qty-${ticket.BigliettoID}">0</div>
+                        <button type="button" class="quantity-btn" onclick="changeQuantity(${ticket.BigliettoID}, -1)">-</button>
                     </div>
                     <button class="buy-btn" onclick="buyTicket(${ticket.BigliettoID})" id="btn-${ticket.BigliettoID}" disabled>
                         Aggiungi al Carrello
@@ -1356,27 +1404,41 @@ async function loadTickets(circuitId) {
     }
 }
 
+/**
+ * Gestisce il cambio quantità per un biglietto
+ * Aggiorna interfaccia e stato del pulsante acquista
+ */
 function changeQuantity(ticketId, change) {
     const ticket = tickets.find(t => t.BigliettoID === ticketId);
     const currentQty = ticketQuantities[ticketId];
+    // Calcola nuova quantità rispettando limiti (0 <= qty <= disponibilità)
     const newQty = Math.max(0, Math.min(ticket.Disponibilita, currentQty + change));
     
+    // Aggiorna quantità e display
     ticketQuantities[ticketId] = newQty;
     document.getElementById(`qty-${ticketId}`).textContent = newQty;
     
+    // Aggiorna stato e testo del pulsante acquista
     const buyBtn = document.getElementById(`btn-${ticketId}`);
     buyBtn.disabled = newQty === 0;
     buyBtn.textContent = newQty === 0 ? 'Aggiungi al Carrello' : `Acquista ${newQty} bigliett${newQty > 1 ? 'i' : 'o'}`;
 }
 
+/**
+ * Gestisce l'acquisto di un biglietto
+ * Prepara il modal di pagamento con i dettagli
+ */
 function buyTicket(ticketId) {
     const ticket = tickets.find(t => t.BigliettoID === ticketId);
     const quantity = ticketQuantities[ticketId];
     
+    // Controllo sicurezza: quantità deve essere maggiore di 0
     if (quantity === 0) return;
     
+    // Calcola totale
     const total = ticket.Prezzo * quantity;
     
+    // Popola i dettagli dell'acquisto nel modal
     document.getElementById('purchaseDetails').innerHTML = `
         <div style="margin-bottom: 1rem;">
             <strong>Utente:</strong> ${currentUser.Nome} ${currentUser.Cognome}<br>
@@ -1389,16 +1451,16 @@ function buyTicket(ticketId) {
         </div>
     `;
     
-    // Memorizza i dati per l'acquisto
+    // Memorizza i dati dell'acquisto nel modal per elaborazione successiva
     document.getElementById('paymentModal').ticketData = {
         ticketId,
         quantity,
         total
     };
     
+    // Mostra il modal di pagamento
     document.getElementById('paymentModal').style.display = 'flex';
 }
-
 // ==================== GESTIONE PAGAMENTO ====================
 
 // Inizializza il form di pagamento
@@ -1413,7 +1475,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const ticketData = modal.ticketData;
             
             if (cardNumber.length !== 9) {
-                showMessage('Il numero di carta deve essere di 9 cifre', 'error');
+                showModalMessage('❌ Il numero di carta deve essere di 9 cifre', 'error');
                 return;
             }
             
@@ -1438,20 +1500,35 @@ document.addEventListener('DOMContentLoaded', function() {
                 const result = await response.json();
                 
                 if (response.ok) {
-                    showMessage(`Acquisto completato con successo! Totale speso: €${result.totaleSpeso.toFixed(2)}`, 'success');
-                    closeModal();
-                    // Ricarica i bigliettiF1 per aggiornare la disponibilità
-                    await loadTickets(selectedCircuit.CircuitoID);
-                    // Reset delle quantità
-                    Object.keys(ticketQuantities).forEach(key => {
-                        ticketQuantities[key] = 0;
-                    });
+                    showModalMessage(`Acquisto completato con successo! Totale speso: €${result.totaleSpeso.toFixed(2)}`, 'success');
+                    setTimeout(() => {
+                        closeModal();
+                        // Ricarica i bigliettiF1 per aggiornare la disponibilità
+                        loadTickets(selectedCircuit.CircuitoID);
+                        // Reset delle quantità
+                        Object.keys(ticketQuantities).forEach(key => {
+                            ticketQuantities[key] = 0;
+                        });
+                    }, 2000);
                 } else {
-                    showMessage(result.error || 'Errore durante l\'acquisto', 'error');
+                    // Gestione errori specifici - mostra nel modal
+                    if (result.cardMismatch) {
+                        showModalMessage('⚠️ ' + result.error, 'error');
+                        // Evidenzia il campo numero carta per far capire che deve essere corretto
+                        document.getElementById('cardNumber').style.borderColor = '#ff4444';
+                        document.getElementById('cardNumber').focus();
+                    } else if (result.cardInUse) {
+                        showModalMessage('⚠️ ' + result.error, 'error');
+                        // Evidenzia il campo numero carta per far capire che deve essere cambiato
+                        document.getElementById('cardNumber').style.borderColor = '#ff4444';
+                        document.getElementById('cardNumber').focus();
+                    } else {
+                        showModalMessage('❌ ' + (result.error || 'Errore durante l\'acquisto'), 'error');
+                    }
                 }
             } catch (error) {
                 console.error('Errore nell\'acquisto:', error);
-                showMessage('Errore di rete durante l\'acquisto. Riprova più tardi.', 'error');
+                showModalMessage('❌ Errore di rete durante l\'acquisto. Riprova più tardi.', 'error');
             } finally {
                 // Riabilita il pulsante
                 submitBtn.disabled = false;
@@ -1459,11 +1536,95 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    
+    // Rimuovi l'evidenziazione del campo quando l'utente inizia a digitare
+    const cardNumberInput = document.getElementById('cardNumber');
+    if (cardNumberInput) {
+        cardNumberInput.addEventListener('input', function() {
+            this.style.borderColor = '';
+            // Pulisci anche il messaggio di errore quando l'utente inizia a digitare
+            clearModalMessage();
+        });
+    }
 });
 
 function closeModal() {
     document.getElementById('paymentModal').style.display = 'none';
     document.getElementById('cardNumber').value = '';
+    // Rimuovi l'evidenziazione del campo quando si chiude il modal
+    document.getElementById('cardNumber').style.borderColor = '';
+    // Rimuovi il messaggio di errore dal modal
+    clearModalMessage();
+}
+
+// Funzione per mostrare messaggi nel modal di pagamento
+function showModalMessage(message, type) {
+    let messageContainer = document.getElementById('modalMessageContainer');
+    
+    if (!messageContainer) {
+        // Crea il contenitore del messaggio nel modal se non esiste
+        messageContainer = document.createElement('div');
+        messageContainer.id = 'modalMessageContainer';
+        messageContainer.className = 'modal-message-container';
+        
+        // Inserisci il contenitore subito dopo i bottoni del modal
+        const modalButtons = document.querySelector('#paymentModal .modal-buttons');
+        modalButtons.insertAdjacentElement('afterend', messageContainer);
+    }
+    
+    messageContainer.innerHTML = `
+        <div class="modal-message ${type}">
+            <span class="message-text">${message}</span>
+            <button class="close-modal-message" onclick="clearModalMessage()">×</button>
+        </div>
+    `;
+    
+    messageContainer.style.display = 'block';
+    
+    // Auto-hide dopo 3 secondi per i messaggi di successo
+    if (type === 'success') {
+        setTimeout(() => {
+            clearModalMessage();
+        }, 3000);
+    }
+}
+
+// Funzione per pulire il messaggio dal modal
+function clearModalMessage() {
+    const messageContainer = document.getElementById('modalMessageContainer');
+    if (messageContainer) {
+        messageContainer.style.display = 'none';
+        messageContainer.innerHTML = '';
+    }
+}
+
+// Funzione helper per mostrare messaggi più dettagliati
+function showMessage(message, type) {
+    const messageContainer = document.getElementById('messageContainer') || createMessageContainer();
+    
+    messageContainer.innerHTML = `
+        <div class="message ${type}">
+            <span class="message-text">${message}</span>
+            <button class="close-message" onclick="this.parentElement.remove()">×</button>
+        </div>
+    `;
+    
+    messageContainer.style.display = 'block';
+    
+    // Auto-hide dopo 5 secondi per i messaggi di successo
+    if (type === 'success') {
+        setTimeout(() => {
+            messageContainer.style.display = 'none';
+        }, 5000);
+    }
+}
+
+function createMessageContainer() {
+    const container = document.createElement('div');
+    container.id = 'messageContainer';
+    container.className = 'message-container';
+    document.body.appendChild(container);
+    return container;
 }
 
 // ==================== INTERFACCIA ADMIN ====================

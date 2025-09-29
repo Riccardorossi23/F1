@@ -8,8 +8,8 @@ app.use(express.static(path.join(__dirname,'..', 'public')));
 
 const db = mysql.createConnection({
     host: 'localhost',
-    user: 'root',
-    password: 'Inter2307!',
+    user: 'RossiRiccardo',
+    password: 'f12025!',
     database: 'f1'
 });
 
@@ -118,6 +118,7 @@ app.get('/biglietti/circuito/:CircuitoID', (req, res) => {
                 WHEN 'Prato' THEN 3 
             END
     `;
+   
 
     db.query(query, [id, id], (err, results) => {
         if (err) return res.status(500).json({ error: err.message });
@@ -159,6 +160,7 @@ app.get('/bigliettiF1/circuito/:CircuitoID', (req, res) => {
 
 // Ottieni tutti i biglietti (per admin)
 app.get('/biglietti', (req, res) => {
+    
     const query = `
         SELECT b.*, c.Nome AS NomeCircuito, c.Nazione, c.Giorno
         FROM BigliettiF1 b
@@ -227,101 +229,7 @@ ORDER BY c.Giorno ASC, b.GranPremioID ASC,
 });
 
 // Acquista biglietti (endpoint generico)
-app.post('/acquista-biglietti', (req, res) => {
-    const { CartaIdentitàID, BigliettoID, Quantita, NumeroCarta } = req.body;
-
-    if (!CartaIdentitàID || !BigliettoID || !Quantita || !NumeroCarta) {
-        return res.status(400).json({ error: 'Tutti i campi sono obbligatori' });
-    }
-
-    if (NumeroCarta.length !== 9) {
-        return res.status(400).json({ error: 'Il numero di carta deve essere di 9 cifre' });
-    }
-
-    // Verifica disponibilità e ottieni prezzo
-    const checkQuery = `SELECT * FROM BigliettiF1 WHERE BigliettoID = ?`;
-
-    db.query(checkQuery, [BigliettoID], (err, results) => {
-        if (err) return res.status(500).json({ error: err.message });
-
-        if (results.length === 0) {
-            return res.status(404).json({ error: 'Biglietto non trovato' });
-        }
-
-        const biglietto = results[0];
-
-        if (biglietto.Disponibilita < Quantita) {
-            return res.status(400).json({ error: 'Biglietti non sufficienti disponibili' });
-        }
-
-        const totaleSpeso = biglietto.Prezzo * Quantita;
-
-        // Inizia transazione
-        db.beginTransaction((err) => {
-            if (err) return res.status(500).json({ error: err.message });
-
-            // Inserisci acquisto
-            const insertQuery = `
-                INSERT INTO AcquistiBiglietti (CartaIdentitàID, BigliettoID, Quantita, NumeroCarta, TotaleSpeso)
-                VALUES (?, ?, ?, ?, ?)
-            `;
-
-            db.query(insertQuery, [CartaIdentitàID, BigliettoID, Quantita, NumeroCarta, totaleSpeso], (err, result) => {
-                if (err) {
-                    return db.rollback(() => {
-                        res.status(500).json({ error: err.message });
-                    });
-                }
-
-                // Aggiorna disponibilità
-                const updateQuery = `
-                    UPDATE BigliettiF1
-                    SET Disponibilita = Disponibilita - ? 
-                    WHERE BigliettoID = ?
-                `;
-
-                db.query(updateQuery, [Quantita, BigliettoID], (err, updateResult) => {
-                    if (err) {
-                        return db.rollback(() => {
-                            res.status(500).json({ error: err.message });
-                        });
-                    }
-
-                    // Aggiorna numero carta utente
-                    const updateUserQuery = `
-                        UPDATE Utenti 
-                        SET NumeroCarta = ? 
-                        WHERE CartaIdentitàID = ?
-                    `;
-
-                    db.query(updateUserQuery, [NumeroCarta, CartaIdentitàID], (err, userResult) => {
-                        if (err) {
-                            return db.rollback(() => {
-                                res.status(500).json({ error: err.message });
-                            });
-                        }
-
-                        db.commit((err) => {
-                            if (err) {
-                                return db.rollback(() => {
-                                    res.status(500).json({ error: err.message });
-                                });
-                            }
-
-                            res.json({
-                                message: 'Acquisto completato con successo',
-                                acquistoId: result.insertId,
-                                totaleSpeso: totaleSpeso
-                            });
-                        });
-                    });
-                });
-            });
-        });
-    });
-});
-
-// Endpoint specifico per acquisto biglietti F1
+// Endpoint specifico per acquisto biglietti F1 con verifica numero carta
 app.post('/acquista-bigliettiF1', (req, res) => {
     const { CartaIdentitàID, BigliettoID, Quantita, NumeroCarta } = req.body;
 
@@ -335,6 +243,62 @@ app.post('/acquista-bigliettiF1', (req, res) => {
         return res.status(400).json({ error: 'Il numero di carta deve essere di 9 cifre' });
     }
 
+    // Prima verifica: controlla se l'utente esiste e il suo numero carta
+    const checkUserQuery = `SELECT NumeroCarta FROM Utenti WHERE CartaIdentitàID = ?`;
+
+    db.query(checkUserQuery, [CartaIdentitàID], (err, userResults) => {
+        if (err) {
+            console.error('❌ Errore query SELECT Utenti:', err);
+            return res.status(500).json({ error: err.message });
+        }
+
+        if (userResults.length === 0) {
+            console.warn('⚠️  Utente non trovato con ID:', CartaIdentitàID);
+            return res.status(404).json({ error: 'Utente non trovato' });
+        }
+
+        const utente = userResults[0];
+
+        // Se l'utente ha già un numero carta, verifica che corrisponda
+        if (utente.NumeroCarta) {
+            if (utente.NumeroCarta !== NumeroCarta) {
+                console.warn('⚠️  Numero carta non corrispondente. Atteso:', utente.NumeroCarta, 'Ricevuto:', NumeroCarta);
+                return res.status(400).json({ 
+                    error: 'Numero carta non corrispondente. Inserisci il numero carta corretto.',
+                    cardMismatch: true 
+                });
+            }
+        } else {
+            // Se l'utente non ha ancora un numero carta, verifica che non sia già utilizzato da altri
+            const checkCardQuery = `SELECT CartaIdentitàID FROM Utenti WHERE NumeroCarta = ? AND CartaIdentitàID != ?`;
+            
+            db.query(checkCardQuery, [NumeroCarta, CartaIdentitàID], (err, cardResults) => {
+                if (err) {
+                    console.error('❌ Errore verifica unicità numero carta:', err);
+                    return res.status(500).json({ error: err.message });
+                }
+
+                if (cardResults.length > 0) {
+                    console.warn('⚠️  Numero carta già in uso da altro utente');
+                    return res.status(400).json({ 
+                        error: 'Numero carta già utilizzato da un altro utente. Inserisci un numero carta diverso.',
+                        cardInUse: true 
+                    });
+                }
+
+                // Continua con l'acquisto e salva il numero carta
+                proceedWithPurchase(CartaIdentitàID, BigliettoID, Quantita, NumeroCarta, true, res);
+            });
+            return; // Esce qui per evitare di continuare con l'esecuzione
+        }
+
+        // Se arriviamo qui, il numero carta è corretto, procediamo con l'acquisto
+        proceedWithPurchase(CartaIdentitàID, BigliettoID, Quantita, NumeroCarta, false, res);
+    });
+});
+
+// Funzione helper per gestire l'acquisto
+function proceedWithPurchase(CartaIdentitàID, BigliettoID, Quantita, NumeroCarta, updateCard, res) {
     const checkQuery = `SELECT * FROM BigliettiF1 WHERE BigliettoID = ?`;
 
     db.query(checkQuery, [BigliettoID], (err, results) => {
@@ -390,39 +354,51 @@ app.post('/acquista-bigliettiF1', (req, res) => {
                         });
                     }
 
-                    const updateUserQuery = `
-                        UPDATE Utenti 
-                        SET NumeroCarta = ? 
-                        WHERE CartaIdentitàID = ?
-                    `;
+                    // Aggiorna il numero carta solo se è la prima volta
+                    if (updateCard) {
+                        const updateUserQuery = `
+                            UPDATE Utenti 
+                            SET NumeroCarta = ? 
+                            WHERE CartaIdentitàID = ?
+                        `;
 
-                    db.query(updateUserQuery, [NumeroCarta, CartaIdentitàID], (err) => {
-                        if (err) {
-                            console.error('❌ Errore aggiornamento utente:', err);
-                            return db.rollback(() => {
-                                res.status(500).json({ error: err.message });
-                            });
-                        }
-
-                        db.commit((err) => {
+                        db.query(updateUserQuery, [NumeroCarta, CartaIdentitàID], (err) => {
                             if (err) {
-                                console.error('❌ Errore commit transazione:', err);
+                                console.error('❌ Errore aggiornamento utente:', err);
                                 return db.rollback(() => {
                                     res.status(500).json({ error: err.message });
                                 });
                             }
-                            res.json({
-                                message: 'Acquisto completato con successo',
-                                acquistoId: result.insertId,
-                                totaleSpeso: totaleSpeso
-                            });
+
+                            commitTransaction(result, totaleSpeso, res);
                         });
-                    });
+                    } else {
+                        // Non aggiorna il numero carta, procede direttamente al commit
+                        commitTransaction(result, totaleSpeso, res);
+                    }
                 });
             });
         });
     });
-});
+}
+// Funzione helper per il commit della transazione
+function commitTransaction(result, totaleSpeso, res) {
+    db.commit((err) => {
+        if (err) {
+            console.error('❌ Errore commit transazione:', err);
+            return db.rollback(() => {
+                res.status(500).json({ error: err.message });
+            });
+        }
+        
+        console.log('✅ Acquisto completato con successo. ID:', result.insertId);
+        res.json({
+            message: 'Acquisto completato con successo',
+            acquistoId: result.insertId,
+            totaleSpeso: totaleSpeso
+        });
+    });
+}
 
 // === API ADMIN BIGLIETTI ===
 
