@@ -662,9 +662,9 @@ function loadData() {
 async function loadDrivers(filtroTeam = null, filtroNazione = null) {
     try {
         const [classificheRes, pilotiRes, costruttoriRes] = await Promise.all([
-            fetch('http://localhost:3000/ClassificaPiloti2025'),
-            fetch('http://localhost:3000/Piloti'),
-            fetch('http://localhost:3000/Costruttori')
+            fetch('/ClassificaPiloti2025'),
+            fetch('/Piloti'),
+            fetch('/Costruttori')
         ]);
 
         if (!classificheRes.ok || !pilotiRes.ok || !costruttoriRes.ok) {
@@ -773,7 +773,7 @@ async function loadDrivers(filtroTeam = null, filtroNazione = null) {
 
 async function loadConstructors() {
     try {
-        const res = await fetch('http://localhost:3000/ClassificaCostruttori2025');
+     const res = await fetch('/ClassificaCostruttori2025');
         if (!res.ok) throw new Error('Errore nel caricamento: ' + res.status);
         const data = await res.json();
 
@@ -813,7 +813,7 @@ async function loadConstructors() {
 
 async function loadRaces(filtroCircuito = null) {
     try {
-        let url = 'http://localhost:3000/RisultatiGare';
+        let url = '/RisultatiGare';
         if (filtroCircuito) {
             url += `?circuito=${filtroCircuito}`;
         }
