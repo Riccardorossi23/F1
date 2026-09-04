@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mysql = require('mysql2');
 const path = require('path');
@@ -6,11 +7,14 @@ const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname,'..', 'public')));
 
+// Le credenziali si leggono da server/.env (vedi .env.example).
+// Se .env non esiste, vengono usati questi valori di default,
+// che corrispondono a quelli creati da database/schema.sql.
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'RossiRiccardo',
-    password: 'f12025!',
-    database: 'f1'
+    host: process.env.DB_HOST || 'localhost',
+    user: process.env.DB_USER || 'root',
+    password: process.env.DB_PASSWORD || '',
+    database: process.env.DB_NAME || 'f1'
 });
 
 db.connect(err => {
@@ -598,6 +602,7 @@ app.use((err, req, res, next) => {
     res.status(500).json({ error: 'Errore interno del server' });
 });
 
-app.listen(3000, () => {
-    console.log('✅ Server Node.js in ascolto su http://localhost:3000');
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`✅ Server Node.js in ascolto su http://localhost:${PORT}`);
 });

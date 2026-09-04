@@ -1,12 +1,21 @@
 {
   "name": "f1",
   "version": "1.0.0",
-  "main": "script.js",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "sync-f1": "node sync-f1-data.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mysql2": "^3.11.0"
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "Sito F1: gestione biglietti, utenti e dati di campionato (piloti, costruttori, classifiche, risultati)."
 }
