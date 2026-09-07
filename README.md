@@ -13,3 +13,4 @@ Per provare l'acquisto biglietti e il pannello admin, usa uno di questi account:
 Ruolo	Email	Password
 🛠️ Amministratore:	admin@f1.com	admin1234
 👤 Utente standard:	mario.rossi@example.com	password123
+
